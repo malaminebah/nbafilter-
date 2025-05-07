@@ -73,8 +73,8 @@ const AllTeams = () => {
   );
 
   return (
-    <div >
-      <div >
+    <div className="container mx-auto px-4">
+      <div>
         {/* Header */}
         <div className="text-center mb-10">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Équipes NBA</h1>
@@ -83,9 +83,8 @@ const AllTeams = () => {
           </p>
         </div>
       
-        
         {/* Cards Grid */}
-        <div className='grid grid-cols-3 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-5 gap-4 mx-auto'>
+        <div className="grid grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4">
           {filteredTeams.map((team) => (
             <Card
               key={team.id}
