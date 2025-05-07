@@ -83,14 +83,6 @@ const AllTeams = () => {
           </p>
         </div>
       
-        <div className="w-full">
-          {/* <SearchBar 
-            value={search} 
-            onChange={setSearch} 
-            placeholder="Rechercher une équipe..." 
-          /> */}
-          
-        </div>
         
         {/* Cards Grid */}
         <div className='grid grid-cols-3 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-5 gap-4 mx-auto'>
