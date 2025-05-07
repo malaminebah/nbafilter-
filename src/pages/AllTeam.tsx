@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import Card from "../components/ui/Card";
 import { allTeams } from "../../data/NbaTeams";
 import SearchBar from "../components/SearchBar";
-import "../styles/button.css";
-// import SearchBar from '../components/ui/SearchBar';
+
 
 interface Team {
   id: number;
@@ -127,7 +126,7 @@ const AllTeams = () => {
             </p>
             <button
               onClick={() => setSearch("")}
-              className="search-button"
+              className="mt-4 px-6 py-3 bg-red-500 text-white font-bold rounded-lg hover:bg-red-600 transition-colors duration-200 ease-in-out shadow-md border-2 border-red-600 cursor-pointer"
             >
               Effacer la recherche
             </button>
