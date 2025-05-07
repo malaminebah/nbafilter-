@@ -121,7 +121,7 @@ const AllTeams = () => {
                 />
               </svg>
             </div>
-            <p className="text-gray-500 text-lg">
+            <p data-testid="no-results-message" className="text-gray-500 text-lg">
               Aucune équipe trouvée pour "{search}"
             </p>
             <button
