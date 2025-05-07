@@ -28,26 +28,20 @@ const Card: React.FC<CardProps> = ({
   full_name,
 }) => {
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 w-64">
-           <Link
-             to={`/team/${id}`}
-             className="block p-4 no-underline text-inherit"
-              >
-      <img className="w-32 h-32 object-contain mx-auto mb-4" src="https://iili.io/33etOiX.png" />
-      <div className=" justify-center">
-        <h3 className="text-[#0A2025] dark:text-white text-lg font-bold font-['Roboto']">
-          {`${full_name} - ${abbreviation}`}
-        </h3>
-        <p className="mt-2 text-[#0A2025] dark:text-white text-sm font-normal font-['Roboto']">
-          {`${city} - ${conference}`}
+ 
+    <Link className="p-8 max-w-lg border border-grey-300 rounded-2xl hover:shadow-xl hover:shadow-indigo-50 flex flex-col items-center justify-center"
+    to={`/team/${id}`}>
+    <img src="https://loremflickr.com/800/600/girl" className="shadow rounded-lg overflow-hidden border" /> 
+    <div className="mt-8 text-center">
+        <h3 className="font-bold text-xl">{full_name}</h3>
+        <p className="mt-2 text-gray-600">
+        {`${city} - ${abbreviation}`}
         </p>
-        <p className="mt-1 mb-3 text-[#0A2025] dark:text-white text-sm font-normal font-['Roboto']">
-          {`Division ${division}`}
+        <p className="mt-2 text-gray-600">
+        {`${division} - ${conference}`}
         </p>
-    
-      </div>
-      </Link>
     </div>
+    </Link>
   );
 };
 
