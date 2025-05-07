@@ -1,6 +1,7 @@
 import React from 'react';
 import AllTeams from './pages/AllTeam';
 import { Routes, Route, Link } from 'react-router-dom';
+import TeamDetails from './pages/TeamDetails';
 
 
 function App() {
@@ -11,6 +12,8 @@ function App() {
     </Link>
       <Routes>
         <Route path="/" element={<AllTeams />} />
+        {/* <Route path="/player/:playerName" element={<PlayerDetails />} /> */}
+        <Route path="/team/:teamId" element={<TeamDetails />} />
       </Routes>
     </>
   )
