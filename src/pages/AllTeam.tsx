@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Card from "../components/ui/Card";
 import { allTeams } from "../../data/NbaTeams";
 import SearchBar from "../components/SearchBar";
@@ -30,7 +30,9 @@ const AllTeams: React.FC = () => {
   }, []);
 
   const filteredTeams = teams.filter((team) =>
-    team.full_name.toLowerCase().includes(searchTerm.toLowerCase())
+    team.full_name.toLowerCase().replace(/\s+/g, '').includes(
+      searchTerm.toLowerCase().replace(/\s+/g, '')
+    )
   );
 
   if (loading)
@@ -79,13 +81,13 @@ const AllTeams: React.FC = () => {
       />
 
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4">
-          {filteredTeams.map((team) => (
-            <Card key={team.id} {...team} />
-          ))}
-        </div>
-        
-        {filteredTeams.length === 0 && (
+        {filteredTeams.length > 0 ? (
+          <div className="grid grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4">
+            {filteredTeams.map((team) => (
+              <Card key={team.id} {...team} />
+            ))}
+          </div>
+        ) : (
           <div className="mt-12 text-center">
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 text-gray-400 mb-4">
               <svg
@@ -102,7 +104,10 @@ const AllTeams: React.FC = () => {
                 />
               </svg>
             </div>
-            <p data-testid="no-results-message" className="text-gray-500 text-lg">
+            <p
+              data-testid="no-results-message"
+              className="text-gray-500 text-lg"
+            >
               Aucune équipe trouvée pour "{searchTerm}"
             </p>
             <button

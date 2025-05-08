@@ -5,12 +5,8 @@ import { allTeams } from '../../data/NbaTeams';
 const TeamDetails: React.FC = () => {
   const { teamId } = useParams<{ teamId: string }>();
 
-  console.log('Team ID:', teamId);
-  console.log('All Teams:', allTeams);
 
-  // Recherche de l'équipe par son ID
   const team = allTeams.find(t => t.id === Number(teamId));
-  console.log('Found Team:', team);
 
   if (!team) {
     return (
@@ -30,7 +26,7 @@ const TeamDetails: React.FC = () => {
     <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         
-        {/* Header Card */}
+       
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-8 transform transition-all hover:shadow-2xl">
           <div className="bg-gradient-to-r from-blue-600 to-blue-800 h-36 flex items-center">
             <div className="px-8">
@@ -44,7 +40,7 @@ const TeamDetails: React.FC = () => {
           </div>
         </div>
         
-        {/* Liste des joueurs */}
+       
         <div className="bg-white rounded-2xl shadow-xl p-6 mb-8">
           <h2 className="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Effectif de l'équipe</h2>
           

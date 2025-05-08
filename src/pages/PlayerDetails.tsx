@@ -1,12 +1,17 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { allTeams } from '../../data/NbaTeams';
-import { Player, Statistique } from '../types/types';
 
 const PlayerDetails: React.FC = () => {
-  const { teamId, playerName } = useParams<{ teamId: string; playerName: string }>();
-  const team = allTeams.find(t => t.id === Number(teamId));
-  const player = team?.players.find(p => p.nom === playerName);
+  const { playerName } = useParams<{ playerName: string }>();
+  
+  const decodedPlayerName = decodeURIComponent(playerName || '');
+  
+  const teamWithPlayer = allTeams.find(team => 
+    team.players.some(player => player.nom === decodedPlayerName)
+  );
+  
+  const player = teamWithPlayer?.players.find(p => p.nom === decodedPlayerName);
 
   if (!player) {
     return (
@@ -22,7 +27,7 @@ const PlayerDetails: React.FC = () => {
     );
   }
 
-  // Trier l'historique par saison (si disponible)
+
   const historiqueTriee = player.historique 
     ? [...player.historique].sort((a, b) => a.annee > b.annee ? -1 : 1)
     : [];
@@ -31,16 +36,14 @@ const PlayerDetails: React.FC = () => {
     <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         
-        {/* Header Card */}
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-8 transform transition-all hover:shadow-2xl">
           <div className="bg-gradient-to-r from-blue-600 to-blue-800 h-32 flex items-center">
             <div className="px-8">
               <h1 className="text-4xl font-bold text-white">{player.nom}</h1>
-              <p className="text-blue-100 mt-1">{team?.full_name}</p>
+              <p className="text-blue-100 mt-1">{teamWithPlayer?.full_name}</p>
             </div>
           </div>
           
-          {/* Stats Summary Cards */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6">
             <div className="bg-blue-50 rounded-xl p-4 shadow-sm transform transition-all hover:scale-105">
               <p className="text-sm font-medium text-blue-500 uppercase">Points</p>
@@ -61,7 +64,6 @@ const PlayerDetails: React.FC = () => {
           </div>
         </div>
         
-        {/* Historique des statistiques */}
         <div className="bg-white rounded-2xl shadow-xl p-6 mb-8">
           <h2 className="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Statistiques par saison</h2>
           
@@ -125,8 +127,7 @@ const PlayerDetails: React.FC = () => {
             </div>
           )}
         </div>
-        
-        {/* Performance Graph Section - Mockup for visual enhancement */}
+      
         <div className="bg-white rounded-2xl shadow-xl p-6 mb-8">
           <h2 className="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Évolution des performances</h2>
           
