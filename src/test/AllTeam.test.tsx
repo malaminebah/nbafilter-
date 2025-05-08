@@ -3,6 +3,7 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { BrowserRouter } from 'react-router-dom';
 import AllTeams from '../pages/AllTeam';
+import { ThemeProvider } from '../context/ThemeContext';
 
 jest.mock('../../data/NbaTeams.ts', () => ({
   allTeams: [
@@ -46,7 +47,11 @@ jest.mock('../../data/NbaTeams.ts', () => ({
 }));
 
 const renderWithRouter = (ui: React.ReactElement) => {
-  return render(<BrowserRouter>{ui}</BrowserRouter>);
+  return render(
+    <ThemeProvider>
+      <BrowserRouter>{ui}</BrowserRouter>
+    </ThemeProvider>
+  );
 };
 
 const MockLoadingComponent = () => (
@@ -61,7 +66,6 @@ const MockErrorComponent = () => (
 
 describe('AllTeams (TeamList) Component', () => {
   test('affiche correctement l\'état de chargement', () => {
-   
     render(<MockLoadingComponent />);
     
     expect(screen.getByText(/chargement/i)).toBeInTheDocument();

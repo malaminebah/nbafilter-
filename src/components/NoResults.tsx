@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import { useTheme } from "../context/ThemeContext";
 
 interface NoResultsProps {
   message: string;
@@ -7,15 +8,21 @@ interface NoResultsProps {
   showClearButton?: boolean;
 }
 
-const NoResults: React.FC<NoResultsProps> = ({ 
-  message, 
-  searchTerm, 
-  onClearSearch, 
-  showClearButton = false 
+const NoResults: React.FC<NoResultsProps> = ({
+  message,
+  searchTerm,
+  onClearSearch,
+  showClearButton = false,
 }) => {
+  const { darkMode } = useTheme();
+
   return (
     <div className="mt-12 text-center">
-      <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 text-gray-400 mb-4">
+      <div
+        className={`inline-flex items-center justify-center w-16 h-16 rounded-full ${
+          darkMode ? "bg-gray-700 text-gray-300" : "bg-gray-100 text-gray-400"
+        } mb-4`}
+      >
         <svg
           className="w-8 h-8"
           fill="none"
@@ -32,7 +39,7 @@ const NoResults: React.FC<NoResultsProps> = ({
       </div>
       <p
         data-testid="no-results-message"
-        className="text-gray-500 text-lg"
+        className={`text-lg ${darkMode ? "text-gray-300" : "text-gray-500"}`}
       >
         {searchTerm ? `${message} "${searchTerm}"` : message}
       </p>
@@ -48,4 +55,4 @@ const NoResults: React.FC<NoResultsProps> = ({
   );
 };
 
-export default NoResults; 
+export default NoResults;

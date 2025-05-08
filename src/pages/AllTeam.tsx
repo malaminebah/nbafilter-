@@ -4,12 +4,14 @@ import { allTeams } from "../../data/NbaTeams";
 import SearchBar from "../components/SearchBar";
 import { Team } from "../types/types";
 import NoResults from "../components/NoResults";
+import { useTheme } from "../context/ThemeContext";
 
 const AllTeams: React.FC = () => {
   const [teams, setTeams] = useState<Team[]>(allTeams);
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const { darkMode } = useTheme();
 
   useEffect(() => {
     const fetchTeams = async () => {
@@ -31,17 +33,28 @@ const AllTeams: React.FC = () => {
   }, []);
 
   const filteredTeams = teams.filter((team) =>
-    team.full_name.toLowerCase().replace(/\s+/g, '').includes(
-      searchTerm.toLowerCase().replace(/\s+/g, '')
-    )
+    team.full_name
+      .toLowerCase()
+      .replace(/\s+/g, "")
+      .includes(searchTerm.toLowerCase().replace(/\s+/g, ""))
   );
 
   if (loading)
     return (
       <div className="flex justify-center items-center h-64">
         <div className="animate-pulse flex flex-col items-center">
-          <div className="w-12 h-12 rounded-full bg-gray-200 mb-3"></div>
-          <div className="text-gray-500 text-lg font-medium">Chargement...</div>
+          <div
+            className={`w-12 h-12 rounded-full ${
+              darkMode ? "bg-gray-700" : "bg-gray-200"
+            } mb-3`}
+          ></div>
+          <div
+            className={`${
+              darkMode ? "text-gray-300" : "text-gray-500"
+            } text-lg font-medium`}
+          >
+            Chargement...
+          </div>
         </div>
       </div>
     );
@@ -49,7 +62,11 @@ const AllTeams: React.FC = () => {
   if (error)
     return (
       <div className="flex justify-center items-center h-64">
-        <div className="bg-red-50 border border-red-200 rounded-2xl p-6 max-w-md">
+        <div
+          className={`${
+            darkMode ? "bg-red-900 border-red-700" : "bg-red-50 border-red-200"
+          } border rounded-2xl p-6 max-w-md`}
+        >
           <div className="flex items-center mb-3">
             <svg
               className="w-8 h-8 text-red-500 mr-3"
@@ -64,9 +81,18 @@ const AllTeams: React.FC = () => {
                 d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
-            <h3 className="text-lg font-medium text-red-800">Erreur</h3>
+            <h3
+              className={`text-lg font-medium ${
+                darkMode ? "text-red-300" : "text-red-800"
+              }`}
+            >
+              Erreur
+            </h3>
           </div>
-          <p data-testid="error-message" className="text-red-700">
+          <p
+            data-testid="error-message"
+            className={darkMode ? "text-red-300" : "text-red-700"}
+          >
             {error}
           </p>
         </div>
@@ -89,7 +115,7 @@ const AllTeams: React.FC = () => {
             ))}
           </div>
         ) : (
-          <NoResults 
+          <NoResults
             message="Aucune équipe trouvée pour"
             searchTerm={searchTerm}
             onClearSearch={() => setSearchTerm("")}

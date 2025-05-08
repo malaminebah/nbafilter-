@@ -5,9 +5,11 @@ import PerformanceEvolution from '../components/PerformanceEvolution';
 import SeasonStatsTable from '../components/SeasonStatsTable';
 import PlayerSummary from '../components/PlayerSummary';
 import PlayerNotFound from '../components/PlayerNotFound';
+import { useTheme } from '../context/ThemeContext';
 
 const PlayerDetails: React.FC = () => {
   const { playerName } = useParams<{ playerName: string }>();
+  const { darkMode } = useTheme();
   
   const decodedPlayerName = decodeURIComponent(playerName || '');
   
@@ -22,7 +24,11 @@ const PlayerDetails: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 py-12 px-4 sm:px-6 lg:px-8">
+    <div className={`min-h-screen ${
+      darkMode 
+        ? 'bg-gradient-to-b from-gray-900 to-gray-800' 
+        : 'bg-gradient-to-b from-gray-100 to-gray-200'
+    } py-12 px-4 sm:px-6 lg:px-8`}>
       <div className="max-w-4xl mx-auto">
         <PlayerSummary player={player} teamName={teamWithPlayer?.full_name || ''} />
         
