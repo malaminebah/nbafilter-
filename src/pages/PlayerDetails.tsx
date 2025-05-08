@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { allTeams } from '../../data/NbaTeams';
+import { Player, Statistique } from '../types/types';
 
 const PlayerDetails: React.FC = () => {
   const { playerName } = useParams<{ playerName: string }>();
@@ -27,7 +28,6 @@ const PlayerDetails: React.FC = () => {
     );
   }
 
-
   const historiqueTriee = player.historique 
     ? [...player.historique].sort((a, b) => a.annee > b.annee ? -1 : 1)
     : [];
@@ -35,7 +35,6 @@ const PlayerDetails: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
-        
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-8 transform transition-all hover:shadow-2xl">
           <div className="bg-gradient-to-r from-blue-600 to-blue-800 h-32 flex items-center">
             <div className="px-8">
@@ -127,7 +126,7 @@ const PlayerDetails: React.FC = () => {
             </div>
           )}
         </div>
-      
+        
         <div className="bg-white rounded-2xl shadow-xl p-6 mb-8">
           <h2 className="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Évolution des performances</h2>
           

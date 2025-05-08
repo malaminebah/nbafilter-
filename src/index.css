@@ -9,8 +9,3 @@
     font-family: 'Roboto', sans-serif;
   }
 }
-
-/* Test class to verify Tailwind is working */
-.test-button {
-  @apply bg-red-500 text-white px-4 py-2 rounded;
-}
