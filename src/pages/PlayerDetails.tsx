@@ -1,39 +1,12 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { allTeams } from '../../data/NbaTeams';
-
-interface Statistique {
-  annee: string;
-  points: number;
-  rebonds: number;
-  passes: number;
-  interceptions: number;
-}
-
-interface Player {
-  nom: string;
-  points: number;
-  rebonds: number;
-  passes: number;
-  interceptions: number;
-  historique?: Statistique[];
-}
+import { Player, Statistique } from '../types/types';
 
 const PlayerDetails: React.FC = () => {
-  const { playerName } = useParams<{ playerName: string }>();
-
-  // Recherche du joueur dans toutes les équipes
-  let player: Player | null = null;
-  let teamName = '';
-
-  for (const team of allTeams) {
-    const found = team.players.find(p => p.nom === decodeURIComponent(playerName || ''));
-    if (found) {
-      player = found;
-      teamName = team.full_name;
-      break;
-    }
-  }
+  const { teamId, playerName } = useParams<{ teamId: string; playerName: string }>();
+  const team = allTeams.find(t => t.id === Number(teamId));
+  const player = team?.players.find(p => p.nom === playerName);
 
   if (!player) {
     return (
@@ -63,7 +36,7 @@ const PlayerDetails: React.FC = () => {
           <div className="bg-gradient-to-r from-blue-600 to-blue-800 h-32 flex items-center">
             <div className="px-8">
               <h1 className="text-4xl font-bold text-white">{player.nom}</h1>
-              <p className="text-blue-100 mt-1">{teamName}</p>
+              <p className="text-blue-100 mt-1">{team?.full_name}</p>
             </div>
           </div>
           

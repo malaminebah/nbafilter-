@@ -2,40 +2,21 @@ import React, { useState, useEffect } from "react";
 import Card from "../components/ui/Card";
 import { allTeams } from "../../data/NbaTeams";
 import SearchBar from "../components/SearchBar";
+import { Team } from "../types/types";
 
-
-interface Team {
-  id: number;
-  abbreviation: string;
-  city: string;
-  conference: string;
-  division: string;
-  full_name: string;
-  name: string;
-  players: Array<{
-    nom: string;
-    points: number;
-    rebonds: number;
-    passes: number;
-    interceptions: number;
-  }>;
-}
-
-const AllTeams = () => {
-  const [teams, setTeams] = useState<Team[]>([]);
-  const [search, setSearch] = useState<string>("");
+const AllTeams: React.FC = () => {
+  const [teams, setTeams] = useState<Team[]>(allTeams);
+  const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-
-  const dataTeams: Team[] = [...allTeams];
 
   useEffect(() => {
     const fetchTeams = async () => {
       try {
-        if (!dataTeams) {
+        if (!teams) {
           throw new Error("Erreur lors de la récupération des équipes");
         }
-        setTeams(dataTeams);
+        setTeams(teams);
       } catch (err) {
         setError(
           err instanceof Error ? err.message : "Une erreur est survenue"
@@ -49,7 +30,7 @@ const AllTeams = () => {
   }, []);
 
   const filteredTeams = teams.filter((team) =>
-    team.full_name.toLowerCase().includes(search.toLowerCase())
+    team.full_name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   if (loading)
@@ -92,8 +73,8 @@ const AllTeams = () => {
   return (
     <div className="flex flex-col gap-8">
       <SearchBar
-        value={search}
-        onChange={setSearch}
+        value={searchTerm}
+        onChange={setSearchTerm}
         placeholder="Rechercher une équipe..."
       />
 
@@ -122,10 +103,10 @@ const AllTeams = () => {
               </svg>
             </div>
             <p data-testid="no-results-message" className="text-gray-500 text-lg">
-              Aucune équipe trouvée pour "{search}"
+              Aucune équipe trouvée pour "{searchTerm}"
             </p>
             <button
-              onClick={() => setSearch("")}
+              onClick={() => setSearchTerm("")}
               className="mt-4 px-6 py-3 bg-red-500 text-white font-bold rounded-lg hover:bg-red-600 transition-colors duration-200 ease-in-out shadow-md border-2 border-red-600 cursor-pointer"
             >
               Effacer la recherche
