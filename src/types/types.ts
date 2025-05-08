@@ -1,20 +1,20 @@
 // Types pour les joueurs
 export interface Player {
-  nom: string;
+  name: string;
   points: number;
-  rebonds: number;
-  passes: number;
-  interceptions: number;
-  historique?: Statistique[];
+  rebounds: number;
+  assists: number;
+  steals: number;
+  history?: Statistics[];
 }
 
 // Types pour les statistiques
-export interface Statistique {
-  annee: string;
+export interface Statistics {
+  year: string;
   points: number;
-  rebonds: number;
-  passes: number;
-  interceptions: number;
+  rebounds: number;
+  assists: number;
+  steals: number;
 }
 
 // Types pour les équipes

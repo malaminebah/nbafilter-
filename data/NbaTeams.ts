@@ -1,100 +1,102 @@
-export const allTeams = [
+import { Team } from "../src/types/types";
+
+export const allTeams : Team[] = [
     {
       "id": 1,
       "abbreviation": "ATL",
       "city": "Atlanta",
-      "conference": "Est",
-      "division": "Sud-Est",
+      "conference": "East",
+      "division": "Southeast",
       "full_name": "Atlanta Hawks",
       "name": "Hawks",
       "players": [
         {
-          "nom": "Trae Young",
+          "name": "Trae Young",
           "points": 27.8,
-          "rebonds": 3.2,
-          "passes": 11.6,
-          "interceptions": 1.1,
-          "historique": [
+          "rebounds": 3.2,
+          "assists": 11.6,
+          "steals": 1.1,
+          "history": [
             {
-              "annee": "2023-2024",
+              "year": "2023-2024",
               "points": 27.8,
-              "rebonds": 3.2,
-              "passes": 11.6,
-              "interceptions": 1.1
+              "rebounds": 3.2,
+              "assists": 11.6,
+              "steals": 1.1
             },
             {
-              "annee": "2022-2023",
+              "year": "2022-2023",
               "points": 26.2,
-              "rebonds": 3.0,
-              "passes": 10.2,
-              "interceptions": 1.0
+              "rebounds": 3.0,
+              "assists": 10.2,
+              "steals": 1.0
             },
             {
-              "annee": "2021-2022",
+              "year": "2021-2022",
               "points": 28.4,
-              "rebonds": 3.8,
-              "passes": 9.7,
-              "interceptions": 0.9
+              "rebounds": 3.8,
+              "assists": 9.7,
+              "steals": 0.9
             }
           ]
         },
         {
-          "nom": "Dejounte Murray",
+          "name": "Dejounte Murray",
           "points": 22.5,
-          "rebonds": 5.3,
-          "passes": 6.4,
-          "interceptions": 1.5,
-          "historique": [
+          "rebounds": 5.3,
+          "assists": 6.4,
+          "steals": 1.5,
+          "history": [
             {
-              "annee": "2023-2024",
+              "year": "2023-2024",
               "points": 22.5,
-              "rebonds": 5.3,
-              "passes": 6.4,
-              "interceptions": 1.5
+              "rebounds": 5.3,
+              "assists": 6.4,
+              "steals": 1.5
             },
             {
-              "annee": "2022-2023",
+              "year": "2022-2023",
               "points": 20.5,
-              "rebonds": 5.1,
-              "passes": 6.1,
-              "interceptions": 1.4
+              "rebounds": 5.1,
+              "assists": 6.1,
+              "steals": 1.4
             },
             {
-              "annee": "2021-2022",
+              "year": "2021-2022",
               "points": 21.1,
-              "rebonds": 8.3,
-              "passes": 9.2,
-              "interceptions": 2.0
+              "rebounds": 8.3,
+              "assists": 9.2,
+              "steals": 2.0
             }
           ]
         },
         {
-          "nom": "Clint Capela",
+          "name": "Clint Capela",
           "points": 11.5,
-          "rebonds": 10.6,
-          "passes": 1.0,
-          "interceptions": 0.7,
-          "historique": [
+          "rebounds": 10.6,
+          "assists": 1.0,
+          "steals": 0.7,
+          "history": [
             {
-              "annee": "2023-2024",
+              "year": "2023-2024",
               "points": 11.5,
-              "rebonds": 10.6,
-              "passes": 1.0,
-              "interceptions": 0.7
+              "rebounds": 10.6,
+              "assists": 1.0,
+              "steals": 0.7
             },
             {
-              "annee": "2022-2023",
+              "year": "2022-2023",
               "points": 12.1,
-              "rebonds": 11.0,
-              "passes": 0.9,
-              "interceptions": 0.7
+              "rebounds": 11.0,
+              "assists": 0.9,
+              "steals": 0.7
             },
             {
-              "annee": "2021-2022",
+              "year": "2021-2022",
               "points": 11.1,
-              "rebonds": 11.9,
-              "passes": 1.2,
-              "interceptions": 0.8
+              "rebounds": 11.9,
+              "assists": 1.2,
+              "steals": 0.8
             }
           ]
         }
@@ -104,98 +106,98 @@ export const allTeams = [
       "id": 2,
       "abbreviation": "BOS",
       "city": "Boston",
-      "conference": "Est",
-      "division": "Atlantique",
+      "conference": "East",
+      "division": "Atlantic",
       "full_name": "Boston Celtics",
       "name": "Celtics",
       "players": [
         {
-          "nom": "Jayson Tatum",
+          "name": "Jayson Tatum",
           "points": 28.1,
-          "rebonds": 8.9,
-          "passes": 4.8,
-          "interceptions": 1.0,
-          "historique": [
+          "rebounds": 8.9,
+          "assists": 4.8,
+          "steals": 1.0,
+          "history": [
             {
-              "annee": "2023-2024",
+              "year": "2023-2024",
               "points": 28.1,
-              "rebonds": 8.9,
-              "passes": 4.8,
-              "interceptions": 1.0
+              "rebounds": 8.9,
+              "assists": 4.8,
+              "steals": 1.0
             },
             {
-              "annee": "2022-2023",
+              "year": "2022-2023",
               "points": 30.1,
-              "rebonds": 8.8,
-              "passes": 4.6,
-              "interceptions": 1.1
+              "rebounds": 8.8,
+              "assists": 4.6,
+              "steals": 1.1
             },
             {
-              "annee": "2021-2022",
+              "year": "2021-2022",
               "points": 26.9,
-              "rebonds": 8.0,
-              "passes": 4.4,
-              "interceptions": 1.0
+              "rebounds": 8.0,
+              "assists": 4.4,
+              "steals": 1.0
             }
           ]
         },
         {
-          "nom": "Jaylen Brown",
+          "name": "Jaylen Brown",
           "points": 23.5,
-          "rebonds": 5.7,
-          "passes": 3.6,
-          "interceptions": 1.2,
-          "historique": [
+          "rebounds": 5.7,
+          "assists": 3.6,
+          "steals": 1.2,
+          "history": [
             {
-              "annee": "2023-2024",
+              "year": "2023-2024",
               "points": 23.5,
-              "rebonds": 5.7,
-              "passes": 3.6,
-              "interceptions": 1.2
+              "rebounds": 5.7,
+              "assists": 3.6,
+              "steals": 1.2
             },
             {
-              "annee": "2022-2023",
+              "year": "2022-2023",
               "points": 26.6,
-              "rebonds": 6.9,
-              "passes": 3.5,
-              "interceptions": 1.1
+              "rebounds": 6.9,
+              "assists": 3.5,
+              "steals": 1.1
             },
             {
-              "annee": "2021-2022",
+              "year": "2021-2022",
               "points": 23.5,
-              "rebonds": 6.1,
-              "passes": 3.0,
-              "interceptions": 1.1
+              "rebounds": 6.1,
+              "assists": 3.0,
+              "steals": 1.1
             }
           ]
         },
         {
-          "nom": "Kristaps Porzingis",
+          "name": "Kristaps Porzingis",
           "points": 20.1,
-          "rebonds": 7.2,
-          "passes": 2.0,
-          "interceptions": 0.5,
-          "historique": [
+          "rebounds": 7.2,
+          "assists": 2.0,
+          "steals": 0.5,
+          "history": [
             {
-              "annee": "2023-2024",
+              "year": "2023-2024",
               "points": 20.1,
-              "rebonds": 7.2,
-              "passes": 2.0,
-              "interceptions": 0.5
+              "rebounds": 7.2,
+              "assists": 2.0,
+              "steals": 0.5
             },
             {
-              "annee": "2022-2023",
+              "year": "2022-2023",
               "points": 23.2,
-              "rebonds": 8.4,
-              "passes": 2.7,
-              "interceptions": 0.9
+              "rebounds": 8.4,
+              "assists": 2.7,
+              "steals": 0.9
             },
             {
-              "annee": "2021-2022",
+              "year": "2021-2022",
               "points": 19.2,
-              "rebonds": 7.7,
-              "passes": 2.0,
-              "interceptions": 0.7
+              "rebounds": 7.7,
+              "assists": 2.0,
+              "steals": 0.7
             }
           ]
         }
@@ -205,98 +207,98 @@ export const allTeams = [
       "id": 3,
       "abbreviation": "BKN",
       "city": "Brooklyn",
-      "conference": "Est",
-      "division": "Atlantique",
+      "conference": "East",
+      "division": "Atlantic",
       "full_name": "Brooklyn Nets",
       "name": "Nets",
       "players": [
         {
-          "nom": "Cam Thomas",
+          "name": "Cam Thomas",
           "points": 26.4,
-          "rebonds": 3.5,
-          "passes": 3.8,
-          "interceptions": 0.8,
-          "historique": [
+          "rebounds": 3.5,
+          "assists": 3.8,
+          "steals": 0.8,
+          "history": [
             {
-              "annee": "2023-2024",
+              "year": "2023-2024",
               "points": 26.4,
-              "rebonds": 3.5,
-              "passes": 3.8,
-              "interceptions": 0.8
+              "rebounds": 3.5,
+              "assists": 3.8,
+              "steals": 0.8
             },
             {
-              "annee": "2022-2023",
+              "year": "2022-2023",
               "points": 10.8,
-              "rebonds": 1.7,
-              "passes": 1.4,
-              "interceptions": 0.3
+              "rebounds": 1.7,
+              "assists": 1.4,
+              "steals": 0.3
             },
             {
-              "annee": "2021-2022",
+              "year": "2021-2022",
               "points": 8.5,
-              "rebonds": 2.4,
-              "passes": 1.2,
-              "interceptions": 0.2
+              "rebounds": 2.4,
+              "assists": 1.2,
+              "steals": 0.2
             }
           ]
         },
         {
-          "nom": "Nic Claxton",
+          "name": "Nic Claxton",
           "points": 11.8,
-          "rebonds": 9.9,
-          "passes": 2.1,
-          "interceptions": 0.7,
-          "historique": [
+          "rebounds": 9.9,
+          "assists": 2.1,
+          "steals": 0.7,
+          "history": [
             {
-              "annee": "2023-2024",
+              "year": "2023-2024",
               "points": 11.8,
-              "rebonds": 9.9,
-              "passes": 2.1,
-              "interceptions": 0.7
+              "rebounds": 9.9,
+              "assists": 2.1,
+              "steals": 0.7
             },
             {
-              "annee": "2022-2023",
+              "year": "2022-2023",
               "points": 12.6,
-              "rebonds": 9.2,
-              "passes": 1.9,
-              "interceptions": 0.8
+              "rebounds": 9.2,
+              "assists": 1.9,
+              "steals": 0.8
             },
             {
-              "annee": "2021-2022",
+              "year": "2021-2022",
               "points": 8.7,
-              "rebonds": 5.6,
-              "passes": 0.9,
-              "interceptions": 0.5
+              "rebounds": 5.6,
+              "assists": 0.9,
+              "steals": 0.5
             }
           ]
         },
         {
-          "nom": "Dennis Schröder",
+          "name": "Dennis Schröder",
           "points": 15.2,
-          "rebonds": 2.7,
-          "passes": 6.3,
-          "interceptions": 0.9,
-          "historique": [
+          "rebounds": 2.7,
+          "assists": 6.3,
+          "steals": 0.9,
+          "history": [
             {
-              "annee": "2023-2024",
+              "year": "2023-2024",
               "points": 15.2,
-              "rebonds": 2.7,
-              "passes": 6.3,
-              "interceptions": 0.9
+              "rebounds": 2.7,
+              "assists": 6.3,
+              "steals": 0.9
             },
             {
-              "annee": "2022-2023",
+              "year": "2022-2023",
               "points": 12.6,
-              "rebonds": 2.5,
-              "passes": 4.5,
-              "interceptions": 0.8
+              "rebounds": 2.5,
+              "assists": 4.5,
+              "steals": 0.8
             },
             {
-              "annee": "2021-2022",
+              "year": "2021-2022",
               "points": 13.5,
-              "rebonds": 3.3,
-              "passes": 4.6,
-              "interceptions": 0.7
+              "rebounds": 3.3,
+              "assists": 4.6,
+              "steals": 0.7
             }
           ]
         }
@@ -306,98 +308,98 @@ export const allTeams = [
       "id": 4,
       "abbreviation": "CHA",
       "city": "Charlotte",
-      "conference": "Est",
-      "division": "Sud-Est",
+      "conference": "East",
+      "division": "Southeast",
       "full_name": "Charlotte Hornets",
       "name": "Hornets",
       "players": [
         {
-          "nom": "LaMelo Ball",
+          "name": "LaMelo Ball",
           "points": 24.7,
-          "rebonds": 5.3,
-          "passes": 8.1,
-          "interceptions": 1.4,
-          "historique": [
+          "rebounds": 5.3,
+          "assists": 8.1,
+          "steals": 1.4,
+          "history": [
             {
-              "annee": "2023-2024",
+              "year": "2023-2024",
               "points": 24.7,
-              "rebonds": 5.3,
-              "passes": 8.1,
-              "interceptions": 1.4
+              "rebounds": 5.3,
+              "assists": 8.1,
+              "steals": 1.4
             },
             {
-              "annee": "2022-2023",
+              "year": "2022-2023",
               "points": 23.3,
-              "rebonds": 6.4,
-              "passes": 8.4,
-              "interceptions": 1.3
+              "rebounds": 6.4,
+              "assists": 8.4,
+              "steals": 1.3
             },
             {
-              "annee": "2021-2022",
+              "year": "2021-2022",
               "points": 20.1,
-              "rebonds": 6.7,
-              "passes": 7.6,
-              "interceptions": 1.6
+              "rebounds": 6.7,
+              "assists": 7.6,
+              "steals": 1.6
             }
           ]
         },
         {
-          "nom": "Brandon Miller",
+          "name": "Brandon Miller",
           "points": 19.8,
-          "rebonds": 4.6,
-          "passes": 2.5,
-          "interceptions": 0.8,
-          "historique": [
+          "rebounds": 4.6,
+          "assists": 2.5,
+          "steals": 0.8,
+          "history": [
             {
-              "annee": "2023-2024",
+              "year": "2023-2024",
               "points": 19.8,
-              "rebonds": 4.6,
-              "passes": 2.5,
-              "interceptions": 0.8
+              "rebounds": 4.6,
+              "assists": 2.5,
+              "steals": 0.8
             },
             {
-              "annee": "2022-2023",
+              "year": "2022-2023",
               "points": 0.0,
-              "rebonds": 0.0,
-              "passes": 0.0,
-              "interceptions": 0.0
+              "rebounds": 0.0,
+              "assists": 0.0,
+              "steals": 0.0
             },
             {
-              "annee": "2021-2022",
+              "year": "2021-2022",
               "points": 0.0,
-              "rebonds": 0.0,
-              "passes": 0.0,
-              "interceptions": 0.0
+              "rebounds": 0.0,
+              "assists": 0.0,
+              "steals": 0.0
             }
           ]
         },
         {
-          "nom": "Mark Williams",
+          "name": "Mark Williams",
           "points": 12.1,
-          "rebonds": 9.8,
-          "passes": 1.2,
-          "interceptions": 0.6,
-          "historique": [
+          "rebounds": 9.8,
+          "assists": 1.2,
+          "steals": 0.6,
+          "history": [
             {
-              "annee": "2023-2024",
+              "year": "2023-2024",
               "points": 12.1,
-              "rebonds": 9.8,
-              "passes": 1.2,
-              "interceptions": 0.6
+              "rebounds": 9.8,
+              "assists": 1.2,
+              "steals": 0.6
             },
             {
-              "annee": "2022-2023",
+              "year": "2022-2023",
               "points": 9.0,
-              "rebonds": 7.1,
-              "passes": 0.5,
-              "interceptions": 0.4
+              "rebounds": 7.1,
+              "assists": 0.5,
+              "steals": 0.4
             },
             {
-              "annee": "2021-2022",
+              "year": "2021-2022",
               "points": 0.0,
-              "rebonds": 0.0,
-              "passes": 0.0,
-              "interceptions": 0.0
+              "rebounds": 0.0,
+              "assists": 0.0,
+              "steals": 0.0
             }
           ]
         }
@@ -405,100 +407,100 @@ export const allTeams = [
     },
     {
       "id": 5,
-      "abbreviation": "CHI",
-      "city": "Chicago",
-      "conference": "Est",
-      "division": "Centrale",
-      "full_name": "Chicago Bulls",
-      "name": "Bulls",
+      "abbreviation": "CLE",
+      "city": "Cleveland",
+      "conference": "East",
+      "division": "Central",
+      "full_name": "Cleveland Cavaliers",
+      "name": "Cavaliers",
       "players": [
         {
-          "nom": "Zach LaVine",
-          "points": 23.5,
-          "rebonds": 4.6,
-          "passes": 4.2,
-          "interceptions": 0.9,
-          "historique": [
+          "name": "Donovan Mitchell",
+          "points": 27.2,
+          "rebounds": 5.1,
+          "assists": 6.1,
+          "steals": 1.8,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 23.5,
-              "rebonds": 4.6,
-              "passes": 4.2,
-              "interceptions": 0.9
+              "year": "2023-2024",
+              "points": 27.2,
+              "rebounds": 5.1,
+              "assists": 6.1,
+              "steals": 1.8
             },
             {
-              "annee": "2022-2023",
-              "points": 24.8,
-              "rebonds": 4.5,
-              "passes": 4.2,
-              "interceptions": 0.8
+              "year": "2022-2023",
+              "points": 28.3,
+              "rebounds": 4.3,
+              "assists": 4.4,
+              "steals": 1.5
             },
             {
-              "annee": "2021-2022",
-              "points": 24.4,
-              "rebonds": 4.6,
-              "passes": 4.5,
-              "interceptions": 0.6
+              "year": "2021-2022",
+              "points": 25.9,
+              "rebounds": 4.2,
+              "assists": 5.3,
+              "steals": 1.5
             }
           ]
         },
         {
-          "nom": "Nikola Vucevic",
-          "points": 17.8,
-          "rebonds": 10.5,
-          "passes": 3.1,
-          "interceptions": 0.6,
-          "historique": [
+          "name": "Darius Garland",
+          "points": 18.5,
+          "rebounds": 2.7,
+          "assists": 7.2,
+          "steals": 1.3,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 17.8,
-              "rebonds": 10.5,
-              "passes": 3.1,
-              "interceptions": 0.6
+              "year": "2023-2024",
+              "points": 18.5,
+              "rebounds": 2.7,
+              "assists": 7.2,
+              "steals": 1.3
             },
             {
-              "annee": "2022-2023",
-              "points": 17.6,
-              "rebonds": 11.0,
-              "passes": 3.2,
-              "interceptions": 0.7
+              "year": "2022-2023",
+              "points": 21.6,
+              "rebounds": 2.7,
+              "assists": 7.8,
+              "steals": 1.2
             },
             {
-              "annee": "2021-2022",
-              "points": 17.6,
-              "rebonds": 11.0,
-              "passes": 3.2,
-              "interceptions": 1.0
+              "year": "2021-2022",
+              "points": 21.7,
+              "rebounds": 3.3,
+              "assists": 8.6,
+              "steals": 1.3
             }
           ]
         },
         {
-          "nom": "Coby White",
-          "points": 19.4,
-          "rebonds": 4.5,
-          "passes": 5.1,
-          "interceptions": 0.8,
-          "historique": [
+          "name": "Evan Mobley",
+          "points": 15.8,
+          "rebounds": 9.5,
+          "assists": 3.2,
+          "steals": 0.8,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 19.4,
-              "rebonds": 4.5,
-              "passes": 5.1,
-              "interceptions": 0.8
+              "year": "2023-2024",
+              "points": 15.8,
+              "rebounds": 9.5,
+              "assists": 3.2,
+              "steals": 0.8
             },
             {
-              "annee": "2022-2023",
-              "points": 9.7,
-              "rebonds": 2.9,
-              "passes": 2.8,
-              "interceptions": 0.5
+              "year": "2022-2023",
+              "points": 16.2,
+              "rebounds": 9.0,
+              "assists": 2.8,
+              "steals": 0.8
             },
             {
-              "annee": "2021-2022",
-              "points": 12.7,
-              "rebonds": 3.0,
-              "passes": 2.9,
-              "interceptions": 0.6
+              "year": "2021-2022",
+              "points": 15.0,
+              "rebounds": 8.3,
+              "assists": 2.5,
+              "steals": 0.8
             }
           ]
         }
@@ -506,100 +508,100 @@ export const allTeams = [
     },
     {
       "id": 6,
-      "abbreviation": "CLE",
-      "city": "Cleveland",
-      "conference": "Est",
-      "division": "Centrale",
-      "full_name": "Cleveland Cavaliers",
-      "name": "Cavaliers",
+      "abbreviation": "DAL",
+      "city": "Dallas",
+      "conference": "West",
+      "division": "Southwest",
+      "full_name": "Dallas Mavericks",
+      "name": "Mavericks",
       "players": [
         {
-          "nom": "Donovan Mitchell",
-          "points": 27.2,
-          "rebonds": 5.1,
-          "passes": 6.1,
-          "interceptions": 1.8,
-          "historique": [
+          "name": "Luka Doncic",
+          "points": 33.4,
+          "rebounds": 9.2,
+          "assists": 9.8,
+          "steals": 1.4,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 27.2,
-              "rebonds": 5.1,
-              "passes": 6.1,
-              "interceptions": 1.8
+              "year": "2023-2024",
+              "points": 33.4,
+              "rebounds": 9.2,
+              "assists": 9.8,
+              "steals": 1.4
             },
             {
-              "annee": "2022-2023",
-              "points": 28.3,
-              "rebonds": 4.3,
-              "passes": 4.4,
-              "interceptions": 1.5
+              "year": "2022-2023",
+              "points": 32.4,
+              "rebounds": 8.6,
+              "assists": 8.0,
+              "steals": 1.4
             },
             {
-              "annee": "2021-2022",
-              "points": 25.9,
-              "rebonds": 4.2,
-              "passes": 5.3,
-              "interceptions": 1.5
+              "year": "2021-2022",
+              "points": 28.4,
+              "rebounds": 9.1,
+              "assists": 8.7,
+              "steals": 1.2
             }
           ]
         },
         {
-          "nom": "Darius Garland",
-          "points": 18.5,
-          "rebonds": 2.7,
-          "passes": 7.2,
-          "interceptions": 1.3,
-          "historique": [
+          "name": "Kyrie Irving",
+          "points": 25.6,
+          "rebounds": 5.0,
+          "assists": 5.2,
+          "steals": 1.1,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 18.5,
-              "rebonds": 2.7,
-              "passes": 7.2,
-              "interceptions": 1.3
+              "year": "2023-2024",
+              "points": 25.6,
+              "rebounds": 5.0,
+              "assists": 5.2,
+              "steals": 1.1
             },
             {
-              "annee": "2022-2023",
-              "points": 21.6,
-              "rebonds": 2.7,
-              "passes": 7.8,
-              "interceptions": 1.2
+              "year": "2022-2023",
+              "points": 27.1,
+              "rebounds": 5.1,
+              "assists": 5.5,
+              "steals": 1.1
             },
             {
-              "annee": "2021-2022",
-              "points": 21.7,
-              "rebonds": 3.3,
-              "passes": 8.6,
-              "interceptions": 1.3
+              "year": "2021-2022",
+              "points": 27.4,
+              "rebounds": 4.4,
+              "assists": 5.8,
+              "steals": 1.4
             }
           ]
         },
         {
-          "nom": "Evan Mobley",
-          "points": 15.8,
-          "rebonds": 9.5,
-          "passes": 3.2,
-          "interceptions": 0.8,
-          "historique": [
+          "name": "P.J. Washington",
+          "points": 13.2,
+          "rebounds": 6.5,
+          "assists": 2.0,
+          "steals": 0.8,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 15.8,
-              "rebonds": 9.5,
-              "passes": 3.2,
-              "interceptions": 0.8
+              "year": "2023-2024",
+              "points": 13.2,
+              "rebounds": 6.5,
+              "assists": 2.0,
+              "steals": 0.8
             },
             {
-              "annee": "2022-2023",
-              "points": 16.2,
-              "rebonds": 9.0,
-              "passes": 2.8,
-              "interceptions": 0.8
+              "year": "2022-2023",
+              "points": 15.7,
+              "rebounds": 4.9,
+              "assists": 2.4,
+              "steals": 0.9
             },
             {
-              "annee": "2021-2022",
-              "points": 15.0,
-              "rebonds": 8.3,
-              "passes": 2.5,
-              "interceptions": 0.8
+              "year": "2021-2022",
+              "points": 12.9,
+              "rebounds": 5.5,
+              "assists": 2.2,
+              "steals": 0.9
             }
           ]
         }
@@ -607,100 +609,100 @@ export const allTeams = [
     },
     {
       "id": 7,
-      "abbreviation": "DAL",
-      "city": "Dallas",
-      "conference": "Ouest",
-      "division": "Sud-Ouest",
-      "full_name": "Dallas Mavericks",
-      "name": "Mavericks",
+      "abbreviation": "DEN",
+      "city": "Denver",
+      "conference": "West",
+      "division": "Northwest",
+      "full_name": "Denver Nuggets",
+      "name": "Nuggets",
       "players": [
         {
-          "nom": "Luka Doncic",
-          "points": 33.4,
-          "rebonds": 9.2,
-          "passes": 9.8,
-          "interceptions": 1.5,
-          "historique": [
+          "name": "Nikola Jokic",
+          "points": 26.4,
+          "rebounds": 12.4,
+          "assists": 9.0,
+          "steals": 1.3,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 33.4,
-              "rebonds": 9.2,
-              "passes": 9.8,
-              "interceptions": 1.5
+              "year": "2023-2024",
+              "points": 26.4,
+              "rebounds": 12.4,
+              "assists": 9.0,
+              "steals": 1.3
             },
             {
-              "annee": "2022-2023",
-              "points": 32.4,
-              "rebonds": 8.6,
-              "passes": 8.0,
-              "interceptions": 1.4
+              "year": "2022-2023",
+              "points": 24.5,
+              "rebounds": 11.8,
+              "assists": 9.8,
+              "steals": 1.3
             },
             {
-              "annee": "2021-2022",
-              "points": 28.4,
-              "rebonds": 9.1,
-              "passes": 8.7,
-              "interceptions": 1.2
-            }
-          ]
-        },
-        {
-          "nom": "Kyrie Irving",
-          "points": 25.6,
-          "rebonds": 5.0,
-          "passes": 5.2,
-          "interceptions": 1.2,
-          "historique": [
-            {
-              "annee": "2023-2024",
-              "points": 25.6,
-              "rebonds": 5.0,
-              "passes": 5.2,
-              "interceptions": 1.2
-            },
-            {
-              "annee": "2022-2023",
+              "year": "2021-2022",
               "points": 27.1,
-              "rebonds": 5.1,
-              "passes": 5.3,
-              "interceptions": 1.1
-            },
-            {
-              "annee": "2021-2022",
-              "points": 27.4,
-              "rebonds": 4.4,
-              "passes": 5.8,
-              "interceptions": 1.4
+              "rebounds": 13.8,
+              "assists": 7.9,
+              "steals": 1.5
             }
           ]
         },
         {
-          "nom": "P.J. Washington",
-          "points": 13.2,
-          "rebonds": 6.5,
-          "passes": 2.0,
-          "interceptions": 0.8,
-          "historique": [
+          "name": "Jamal Murray",
+          "points": 21.2,
+          "rebounds": 4.1,
+          "assists": 6.5,
+          "steals": 1.0,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 13.2,
-              "rebonds": 6.5,
-              "passes": 2.0,
-              "interceptions": 0.8
+              "year": "2023-2024",
+              "points": 21.2,
+              "rebounds": 4.1,
+              "assists": 6.5,
+              "steals": 1.0
             },
             {
-              "annee": "2022-2023",
-              "points": 15.7,
-              "rebonds": 4.9,
-              "passes": 2.4,
-              "interceptions": 0.9
+              "year": "2022-2023",
+              "points": 20.0,
+              "rebounds": 4.0,
+              "assists": 6.2,
+              "steals": 1.0
             },
             {
-              "annee": "2021-2022",
-              "points": 10.3,
-              "rebonds": 5.2,
-              "passes": 2.3,
-              "interceptions": 0.9
+              "year": "2021-2022",
+              "points": 0.0,
+              "rebounds": 0.0,
+              "assists": 0.0,
+              "steals": 0.0
+            }
+          ]
+        },
+        {
+          "name": "Michael Porter Jr.",
+          "points": 16.7,
+          "rebounds": 7.0,
+          "assists": 1.5,
+          "steals": 0.6,
+          "history": [
+            {
+              "year": "2023-2024",
+              "points": 16.7,
+              "rebounds": 7.0,
+              "assists": 1.5,
+              "steals": 0.6
+            },
+            {
+              "year": "2022-2023",
+              "points": 17.4,
+              "rebounds": 5.5,
+              "assists": 1.0,
+              "steals": 0.6
+            },
+            {
+              "year": "2021-2022",
+              "points": 19.0,
+              "rebounds": 7.3,
+              "assists": 1.1,
+              "steals": 0.6
             }
           ]
         }
@@ -708,100 +710,100 @@ export const allTeams = [
     },
     {
       "id": 8,
-      "abbreviation": "DEN",
-      "city": "Denver",
-      "conference": "Ouest",
-      "division": "Nord-Ouest",
-      "full_name": "Denver Nuggets",
-      "name": "Nuggets",
+      "abbreviation": "DET",
+      "city": "Detroit",
+      "conference": "East",
+      "division": "Central",
+      "full_name": "Detroit Pistons",
+      "name": "Pistons",
       "players": [
         {
-          "nom": "Nikola Jokic",
-          "points": 28.5,
-          "rebonds": 12.4,
-          "passes": 9.3,
-          "interceptions": 1.4,
-          "historique": [
+          "name": "Cade Cunningham",
+          "points": 22.7,
+          "rebounds": 4.3,
+          "assists": 7.5,
+          "steals": 1.1,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 28.5,
-              "rebonds": 12.4,
-              "passes": 9.3,
-              "interceptions": 1.4
+              "year": "2023-2024",
+              "points": 22.7,
+              "rebounds": 4.3,
+              "assists": 7.5,
+              "steals": 1.1
             },
             {
-              "annee": "2022-2023",
-              "points": 24.5,
-              "rebonds": 11.8,
-              "passes": 9.8,
-              "interceptions": 1.3
-            },
-            {
-              "annee": "2021-2022",
-              "points": 27.1,
-              "rebonds": 13.8,
-              "passes": 7.9,
-              "interceptions": 1.5
-            }
-          ]
-        },
-        {
-          "nom": "Jamal Murray",
-          "points": 21.2,
-          "rebonds": 4.1,
-          "passes": 6.5,
-          "interceptions": 1.1,
-          "historique": [
-            {
-              "annee": "2023-2024",
-              "points": 21.2,
-              "rebonds": 4.1,
-              "passes": 6.5,
-              "interceptions": 1.1
-            },
-            {
-              "annee": "2022-2023",
-              "points": 20.0,
-              "rebonds": 4.0,
-              "passes": 6.2,
-              "interceptions": 1.0
-            },
-            {
-              "annee": "2021-2022",
+              "year": "2022-2023",
               "points": 0.0,
-              "rebonds": 0.0,
-              "passes": 0.0,
-              "interceptions": 0.0
+              "rebounds": 0.0,
+              "assists": 0.0,
+              "steals": 0.0
+            },
+            {
+              "year": "2021-2022",
+              "points": 17.4,
+              "rebounds": 5.5,
+              "assists": 5.6,
+              "steals": 1.2
             }
           ]
         },
         {
-          "nom": "Michael Porter Jr.",
-          "points": 16.8,
-          "rebonds": 7.2,
-          "passes": 1.7,
-          "interceptions": 0.6,
-          "historique": [
+          "name": "Jaden Ivey",
+          "points": 15.4,
+          "rebounds": 3.6,
+          "assists": 3.8,
+          "steals": 0.8,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 16.8,
-              "rebonds": 7.2,
-              "passes": 1.7,
-              "interceptions": 0.6
+              "year": "2023-2024",
+              "points": 15.4,
+              "rebounds": 3.6,
+              "assists": 3.8,
+              "steals": 0.8
             },
             {
-              "annee": "2022-2023",
-              "points": 17.4,
-              "rebonds": 5.5,
-              "passes": 1.0,
-              "interceptions": 0.5
+              "year": "2022-2023",
+              "points": 16.3,
+              "rebounds": 3.9,
+              "assists": 5.2,
+              "steals": 0.8
             },
             {
-              "annee": "2021-2022",
-              "points": 9.9,
-              "rebonds": 6.6,
-              "passes": 1.9,
-              "interceptions": 0.6
+              "year": "2021-2022",
+              "points": 0.0,
+              "rebounds": 0.0,
+              "assists": 0.0,
+              "steals": 0.0
+            }
+          ]
+        },
+        {
+          "name": "Jalen Duren",
+          "points": 13.8,
+          "rebounds": 11.9,
+          "assists": 2.8,
+          "steals": 0.7,
+          "history": [
+            {
+              "year": "2023-2024",
+              "points": 13.8,
+              "rebounds": 11.9,
+              "assists": 2.8,
+              "steals": 0.7
+            },
+            {
+              "year": "2022-2023",
+              "points": 9.1,
+              "rebounds": 8.9,
+              "assists": 1.1,
+              "steals": 0.7
+            },
+            {
+              "year": "2021-2022",
+              "points": 0.0,
+              "rebounds": 0.0,
+              "assists": 0.0,
+              "steals": 0.0
             }
           ]
         }
@@ -809,100 +811,100 @@ export const allTeams = [
     },
     {
       "id": 9,
-      "abbreviation": "DET",
-      "city": "Detroit",
-      "conference": "Est",
-      "division": "Centrale",
-      "full_name": "Detroit Pistons",
-      "name": "Pistons",
+      "abbreviation": "GSW",
+      "city": "Golden State",
+      "conference": "West",
+      "division": "Pacific",
+      "full_name": "Golden State Warriors",
+      "name": "Warriors",
       "players": [
         {
-          "nom": "Cade Cunningham",
-          "points": 22.6,
-          "rebonds": 4.5,
-          "passes": 7.5,
-          "interceptions": 1.2,
-          "historique": [
+          "name": "Stephen Curry",
+          "points": 29.4,
+          "rebounds": 4.4,
+          "assists": 4.4,
+          "steals": 0.7,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 22.6,
-              "rebonds": 4.5,
-              "passes": 7.5,
-              "interceptions": 1.2
+              "year": "2023-2024",
+              "points": 29.4,
+              "rebounds": 4.4,
+              "assists": 4.4,
+              "steals": 0.7
             },
             {
-              "annee": "2022-2023",
-              "points": 19.9,
-              "rebonds": 6.2,
-              "passes": 6.0,
-              "interceptions": 0.8
+              "year": "2022-2023",
+              "points": 29.4,
+              "rebounds": 6.1,
+              "assists": 6.3,
+              "steals": 0.9
             },
             {
-              "annee": "2021-2022",
-              "points": 17.4,
-              "rebonds": 5.5,
-              "passes": 5.6,
-              "interceptions": 1.2
+              "year": "2021-2022",
+              "points": 25.5,
+              "rebounds": 5.2,
+              "assists": 6.3,
+              "steals": 1.3
             }
           ]
         },
         {
-          "nom": "Jaden Ivey",
-          "points": 17.8,
-          "rebonds": 3.9,
-          "passes": 4.2,
-          "interceptions": 0.9,
-          "historique": [
+          "name": "Klay Thompson",
+          "points": 17.9,
+          "rebounds": 3.3,
+          "assists": 2.2,
+          "steals": 0.6,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 17.8,
-              "rebonds": 3.9,
-              "passes": 4.2,
-              "interceptions": 0.9
+              "year": "2023-2024",
+              "points": 17.9,
+              "rebounds": 3.3,
+              "assists": 2.2,
+              "steals": 0.6
             },
             {
-              "annee": "2022-2023",
-              "points": 16.3,
-              "rebonds": 3.9,
-              "passes": 5.2,
-              "interceptions": 0.9
+              "year": "2022-2023",
+              "points": 21.9,
+              "rebounds": 4.1,
+              "assists": 2.4,
+              "steals": 0.7
             },
             {
-              "annee": "2021-2022",
-              "points": 0.0,
-              "rebonds": 0.0,
-              "passes": 0.0,
-              "interceptions": 0.0
+              "year": "2021-2022",
+              "points": 20.4,
+              "rebounds": 3.9,
+              "assists": 2.8,
+              "steals": 0.5
             }
           ]
         },
         {
-          "nom": "Jalen Duren",
-          "points": 13.8,
-          "rebonds": 11.6,
-          "passes": 2.2,
-          "interceptions": 0.5,
-          "historique": [
+          "name": "Draymond Green",
+          "points": 9.7,
+          "rebounds": 5.5,
+          "assists": 5.8,
+          "steals": 0.8,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 13.8,
-              "rebonds": 11.6,
-              "passes": 2.2,
-              "interceptions": 0.5
+              "year": "2023-2024",
+              "points": 9.7,
+              "rebounds": 5.5,
+              "assists": 5.8,
+              "steals": 0.8
             },
             {
-              "annee": "2022-2023",
-              "points": 9.1,
-              "rebonds": 8.9,
-              "passes": 1.1,
-              "interceptions": 0.3
+              "year": "2022-2023",
+              "points": 8.5,
+              "rebounds": 7.2,
+              "assists": 6.8,
+              "steals": 1.0
             },
             {
-              "annee": "2021-2022",
-              "points": 0.0,
-              "rebonds": 0.0,
-              "passes": 0.0,
-              "interceptions": 0.0
+              "year": "2021-2022",
+              "points": 7.5,
+              "rebounds": 7.3,
+              "assists": 7.0,
+              "steals": 1.3
             }
           ]
         }
@@ -910,100 +912,100 @@ export const allTeams = [
     },
     {
       "id": 10,
-      "abbreviation": "GSW",
-      "city": "Golden State",
-      "conference": "Ouest",
-      "division": "Pacifique",
-      "full_name": "Golden State Warriors",
-      "name": "Warriors",
+      "abbreviation": "HOU",
+      "city": "Houston",
+      "conference": "West",
+      "division": "Southwest",
+      "full_name": "Houston Rockets",
+      "name": "Rockets",
       "players": [
         {
-          "nom": "Stephen Curry",
-          "points": 26.8,
-          "rebonds": 4.5,
-          "passes": 6.3,
-          "interceptions": 1.2,
-          "historique": [
+          "name": "Jalen Green",
+          "points": 19.6,
+          "rebounds": 4.8,
+          "assists": 3.5,
+          "steals": 0.8,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 26.8,
-              "rebonds": 4.5,
-              "passes": 6.3,
-              "interceptions": 1.2
+              "year": "2023-2024",
+              "points": 19.6,
+              "rebounds": 4.8,
+              "assists": 3.5,
+              "steals": 0.8
             },
             {
-              "annee": "2022-2023",
-              "points": 29.4,
-              "rebonds": 6.1,
-              "passes": 6.3,
-              "interceptions": 0.9
+              "year": "2022-2023",
+              "points": 22.1,
+              "rebounds": 3.7,
+              "assists": 3.7,
+              "steals": 0.8
             },
             {
-              "annee": "2021-2022",
-              "points": 25.5,
-              "rebonds": 5.2,
-              "passes": 6.3,
-              "interceptions": 1.3
+              "year": "2021-2022",
+              "points": 17.3,
+              "rebounds": 3.4,
+              "assists": 2.6,
+              "steals": 0.7
             }
           ]
         },
         {
-          "nom": "Draymond Green",
-          "points": 8.6,
-          "rebonds": 7.2,
-          "passes": 6.8,
-          "interceptions": 1.1,
-          "historique": [
+          "name": "Alperen Sengun",
+          "points": 21.1,
+          "rebounds": 9.3,
+          "assists": 5.0,
+          "steals": 1.2,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 8.6,
-              "rebonds": 7.2,
-              "passes": 6.8,
-              "interceptions": 1.1
+              "year": "2023-2024",
+              "points": 21.1,
+              "rebounds": 9.3,
+              "assists": 5.0,
+              "steals": 1.2
             },
             {
-              "annee": "2022-2023",
-              "points": 8.5,
-              "rebonds": 7.2,
-              "passes": 6.8,
-              "interceptions": 1.0
+              "year": "2022-2023",
+              "points": 14.8,
+              "rebounds": 9.0,
+              "assists": 3.9,
+              "steals": 0.9
             },
             {
-              "annee": "2021-2022",
-              "points": 7.5,
-              "rebonds": 7.3,
-              "passes": 7.0,
-              "interceptions": 1.3
+              "year": "2021-2022",
+              "points": 9.6,
+              "rebounds": 5.5,
+              "assists": 2.6,
+              "steals": 0.8
             }
           ]
         },
         {
-          "nom": "Jonathan Kuminga",
-          "points": 16.1,
-          "rebonds": 5.2,
-          "passes": 2.2,
-          "interceptions": 0.7,
-          "historique": [
+          "name": "Fred VanVleet",
+          "points": 16.8,
+          "rebounds": 3.8,
+          "assists": 8.0,
+          "steals": 1.4,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 16.1,
-              "rebonds": 5.2,
-              "passes": 2.2,
-              "interceptions": 0.7
+              "year": "2023-2024",
+              "points": 16.8,
+              "rebounds": 3.8,
+              "assists": 8.0,
+              "steals": 1.4
             },
             {
-              "annee": "2022-2023",
-              "points": 9.9,
-              "rebonds": 3.4,
-              "passes": 1.9,
-              "interceptions": 0.4
+              "year": "2022-2023",
+              "points": 19.3,
+              "rebounds": 4.1,
+              "assists": 7.2,
+              "steals": 1.8
             },
             {
-              "annee": "2021-2022",
-              "points": 9.3,
-              "rebonds": 3.3,
-              "passes": 0.9,
-              "interceptions": 0.4
+              "year": "2021-2022",
+              "points": 20.3,
+              "rebounds": 4.4,
+              "assists": 6.7,
+              "steals": 1.7
             }
           ]
         }
@@ -1011,100 +1013,100 @@ export const allTeams = [
     },
     {
       "id": 11,
-      "abbreviation": "HOU",
-      "city": "Houston",
-      "conference": "Ouest",
-      "division": "Sud-Ouest",
-      "full_name": "Houston Rockets",
-      "name": "Rockets",
+      "abbreviation": "IND",
+      "city": "Indiana",
+      "conference": "East",
+      "division": "Central",
+      "full_name": "Indiana Pacers",
+      "name": "Pacers",
       "players": [
         {
-          "nom": "Jalen Green",
-          "points": 22.5,
-          "rebonds": 5.2,
-          "passes": 3.8,
-          "interceptions": 0.9,
-          "historique": [
+          "name": "Tyrese Haliburton",
+          "points": 20.1,
+          "rebounds": 3.9,
+          "assists": 11.2,
+          "steals": 1.0,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 22.5,
-              "rebonds": 5.2,
-              "passes": 3.8,
-              "interceptions": 0.9
+              "year": "2023-2024",
+              "points": 20.1,
+              "rebounds": 3.9,
+              "assists": 11.2,
+              "steals": 1.0
             },
             {
-              "annee": "2022-2023",
-              "points": 22.1,
-              "rebonds": 3.7,
-              "passes": 3.7,
-              "interceptions": 0.8
+              "year": "2022-2023",
+              "points": 20.7,
+              "rebounds": 3.7,
+              "assists": 10.4,
+              "steals": 1.6
             },
             {
-              "annee": "2021-2022",
-              "points": 17.3,
-              "rebonds": 3.4,
-              "passes": 2.6,
-              "interceptions": 0.7
+              "year": "2021-2022",
+              "points": 15.3,
+              "rebounds": 3.9,
+              "assists": 8.2,
+              "steals": 1.7
             }
           ]
         },
         {
-          "nom": "Alperen Sengun",
-          "points": 20.8,
-          "rebonds": 10.5,
-          "passes": 5.2,
-          "interceptions": 1.2,
-          "historique": [
+          "name": "Pascal Siakam",
+          "points": 21.8,
+          "rebounds": 6.5,
+          "assists": 4.9,
+          "steals": 0.8,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 20.8,
-              "rebonds": 10.5,
-              "passes": 5.2,
-              "interceptions": 1.2
+              "year": "2023-2024",
+              "points": 21.8,
+              "rebounds": 6.5,
+              "assists": 4.9,
+              "steals": 0.8
             },
             {
-              "annee": "2022-2023",
-              "points": 14.8,
-              "rebonds": 9.0,
-              "passes": 3.9,
-              "interceptions": 0.9
+              "year": "2022-2023",
+              "points": 24.2,
+              "rebounds": 7.8,
+              "assists": 5.8,
+              "steals": 0.9
             },
             {
-              "annee": "2021-2022",
-              "points": 9.6,
-              "rebonds": 5.5,
-              "passes": 2.6,
-              "interceptions": 0.8
+              "year": "2021-2022",
+              "points": 22.8,
+              "rebounds": 8.5,
+              "assists": 5.3,
+              "steals": 1.3
             }
           ]
         },
         {
-          "nom": "Fred VanVleet",
-          "points": 17.2,
-          "rebonds": 3.5,
-          "passes": 7.8,
-          "interceptions": 1.3,
-          "historique": [
+          "name": "Myles Turner",
+          "points": 17.1,
+          "rebounds": 7.1,
+          "assists": 1.3,
+          "steals": 0.6,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 17.2,
-              "rebonds": 3.5,
-              "passes": 7.8,
-              "interceptions": 1.3
+              "year": "2023-2024",
+              "points": 17.1,
+              "rebounds": 7.1,
+              "assists": 1.3,
+              "steals": 0.6
             },
             {
-              "annee": "2022-2023",
-              "points": 19.3,
-              "rebonds": 4.1,
-              "passes": 7.2,
-              "interceptions": 1.8
+              "year": "2022-2023",
+              "points": 18.0,
+              "rebounds": 7.5,
+              "assists": 1.4,
+              "steals": 0.6
             },
             {
-              "annee": "2021-2022",
-              "points": 20.3,
-              "rebonds": 4.4,
-              "passes": 6.7,
-              "interceptions": 1.7
+              "year": "2021-2022",
+              "points": 12.9,
+              "rebounds": 7.1,
+              "assists": 1.0,
+              "steals": 0.7
             }
           ]
         }
@@ -1112,100 +1114,100 @@ export const allTeams = [
     },
     {
       "id": 12,
-      "abbreviation": "IND",
-      "city": "Indiana",
-      "conference": "Est",
-      "division": "Centrale",
-      "full_name": "Indiana Pacers",
-      "name": "Pacers",
+      "abbreviation": "LAC",
+      "city": "LA",
+      "conference": "West",
+      "division": "Pacific",
+      "full_name": "Los Angeles Clippers",
+      "name": "Clippers",
       "players": [
         {
-          "nom": "Tyrese Haliburton",
-          "points": 21.8,
-          "rebonds": 4.2,
-          "passes": 10.5,
-          "interceptions": 1.2,
-          "historique": [
+          "name": "Kawhi Leonard",
+          "points": 23.7,
+          "rebounds": 6.1,
+          "assists": 3.6,
+          "steals": 1.6,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 21.8,
-              "rebonds": 4.2,
-              "passes": 10.5,
-              "interceptions": 1.2
+              "year": "2023-2024",
+              "points": 23.7,
+              "rebounds": 6.1,
+              "assists": 3.6,
+              "steals": 1.6
             },
             {
-              "annee": "2022-2023",
-              "points": 20.7,
-              "rebonds": 3.7,
-              "passes": 10.4,
-              "interceptions": 1.6
+              "year": "2022-2023",
+              "points": 23.8,
+              "rebounds": 6.5,
+              "assists": 3.9,
+              "steals": 1.4
             },
             {
-              "annee": "2021-2022",
-              "points": 15.3,
-              "rebonds": 4.0,
-              "passes": 8.2,
-              "interceptions": 1.7
+              "year": "2021-2022",
+              "points": 0.0,
+              "rebounds": 0.0,
+              "assists": 0.0,
+              "steals": 0.0
             }
           ]
         },
         {
-          "nom": "Pascal Siakam",
-          "points": 22.3,
-          "rebonds": 7.8,
-          "passes": 4.5,
-          "interceptions": 0.9,
-          "historique": [
+          "name": "Paul George",
+          "points": 22.6,
+          "rebounds": 5.2,
+          "assists": 3.5,
+          "steals": 1.6,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 22.3,
-              "rebonds": 7.8,
-              "passes": 4.5,
-              "interceptions": 0.9
+              "year": "2023-2024",
+              "points": 22.6,
+              "rebounds": 5.2,
+              "assists": 3.5,
+              "steals": 1.6
             },
             {
-              "annee": "2022-2023",
-              "points": 24.2,
-              "rebonds": 7.8,
-              "passes": 5.8,
-              "interceptions": 0.9
+              "year": "2022-2023",
+              "points": 23.8,
+              "rebounds": 6.1,
+              "assists": 5.1,
+              "steals": 1.5
             },
             {
-              "annee": "2021-2022",
-              "points": 22.8,
-              "rebonds": 8.5,
-              "passes": 5.3,
-              "interceptions": 1.3
+              "year": "2021-2022",
+              "points": 24.3,
+              "rebounds": 6.9,
+              "assists": 5.7,
+              "steals": 2.2
             }
           ]
         },
         {
-          "nom": "Myles Turner",
-          "points": 16.2,
-          "rebonds": 6.9,
-          "passes": 1.3,
-          "interceptions": 0.6,
-          "historique": [
+          "name": "James Harden",
+          "points": 17.8,
+          "rebounds": 5.1,
+          "assists": 8.5,
+          "steals": 1.1,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 16.2,
-              "rebonds": 6.9,
-              "passes": 1.3,
-              "interceptions": 0.6
+              "year": "2023-2024",
+              "points": 17.8,
+              "rebounds": 5.1,
+              "assists": 8.5,
+              "steals": 1.1
             },
             {
-              "annee": "2022-2023",
-              "points": 18.0,
-              "rebonds": 7.5,
-              "passes": 1.4,
-              "interceptions": 0.6
+              "year": "2022-2023",
+              "points": 21.0,
+              "rebounds": 6.1,
+              "assists": 10.7,
+              "steals": 1.2
             },
             {
-              "annee": "2021-2022",
-              "points": 12.9,
-              "rebonds": 7.1,
-              "passes": 1.0,
-              "interceptions": 0.7
+              "year": "2021-2022",
+              "points": 22.0,
+              "rebounds": 7.7,
+              "assists": 10.3,
+              "steals": 1.3
             }
           ]
         }
@@ -1213,100 +1215,100 @@ export const allTeams = [
     },
     {
       "id": 13,
-      "abbreviation": "LAC",
+      "abbreviation": "LAL",
       "city": "Los Angeles",
-      "conference": "Ouest",
-      "division": "Pacifique",
-      "full_name": "Los Angeles Clippers",
-      "name": "Clippers",
+      "conference": "West",
+      "division": "Pacific",
+      "full_name": "Los Angeles Lakers",
+      "name": "Lakers",
       "players": [
         {
-          "nom": "Kawhi Leonard",
-          "points": 24.6,
-          "rebonds": 6.3,
-          "passes": 3.8,
-          "interceptions": 1.6,
-          "historique": [
+          "name": "LeBron James",
+          "points": 25.7,
+          "rebounds": 7.3,
+          "assists": 8.1,
+          "steals": 1.2,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 24.6,
-              "rebonds": 6.3,
-              "passes": 3.8,
-              "interceptions": 1.6
+              "year": "2023-2024",
+              "points": 25.7,
+              "rebounds": 7.3,
+              "assists": 8.1,
+              "steals": 1.2
             },
             {
-              "annee": "2022-2023",
-              "points": 23.8,
-              "rebonds": 6.5,
-              "passes": 3.9,
-              "interceptions": 1.4
+              "year": "2022-2023",
+              "points": 28.9,
+              "rebounds": 8.3,
+              "assists": 6.8,
+              "steals": 0.9
             },
             {
-              "annee": "2021-2022",
-              "points": 0.0,
-              "rebonds": 0.0,
-              "passes": 0.0,
-              "interceptions": 0.0
+              "year": "2021-2022",
+              "points": 30.3,
+              "rebounds": 8.2,
+              "assists": 6.2,
+              "steals": 1.3
             }
           ]
         },
         {
-          "nom": "James Harden",
-          "points": 21.2,
-          "rebonds": 5.1,
-          "passes": 8.5,
-          "interceptions": 1.1,
-          "historique": [
+          "name": "Anthony Davis",
+          "points": 24.7,
+          "rebounds": 12.6,
+          "assists": 3.5,
+          "steals": 1.2,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 21.2,
-              "rebonds": 5.1,
-              "passes": 8.5,
-              "interceptions": 1.1
+              "year": "2023-2024",
+              "points": 24.7,
+              "rebounds": 12.6,
+              "assists": 3.5,
+              "steals": 1.2
             },
             {
-              "annee": "2022-2023",
-              "points": 21.0,
-              "rebonds": 6.1,
-              "passes": 10.7,
-              "interceptions": 1.2
+              "year": "2022-2023",
+              "points": 25.9,
+              "rebounds": 12.5,
+              "assists": 2.6,
+              "steals": 1.1
             },
             {
-              "annee": "2021-2022",
-              "points": 22.0,
-              "rebonds": 7.7,
-              "passes": 10.3,
-              "interceptions": 1.3
+              "year": "2021-2022",
+              "points": 23.2,
+              "rebounds": 9.9,
+              "assists": 3.1,
+              "steals": 1.2
             }
           ]
         },
         {
-          "nom": "Ivica Zubac",
-          "points": 11.8,
-          "rebonds": 9.2,
-          "passes": 1.5,
-          "interceptions": 0.4,
-          "historique": [
+          "name": "Austin Reaves",
+          "points": 15.9,
+          "rebounds": 4.1,
+          "assists": 5.5,
+          "steals": 0.8,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 11.8,
-              "rebonds": 9.2,
-              "passes": 1.5,
-              "interceptions": 0.4
+              "year": "2023-2024",
+              "points": 15.9,
+              "rebounds": 4.1,
+              "assists": 5.5,
+              "steals": 0.8
             },
             {
-              "annee": "2022-2023",
-              "points": 10.8,
-              "rebonds": 9.9,
-              "passes": 1.0,
-              "interceptions": 0.4
+              "year": "2022-2023",
+              "points": 13.0,
+              "rebounds": 3.0,
+              "assists": 3.4,
+              "steals": 0.5
             },
             {
-              "annee": "2021-2022",
-              "points": 10.3,
-              "rebonds": 8.5,
-              "passes": 1.6,
-              "interceptions": 0.5
+              "year": "2021-2022",
+              "points": 7.3,
+              "rebounds": 3.2,
+              "assists": 1.8,
+              "steals": 0.3
             }
           ]
         }
@@ -1314,100 +1316,100 @@ export const allTeams = [
     },
     {
       "id": 14,
-      "abbreviation": "LAL",
-      "city": "Los Angeles",
-      "conference": "Ouest",
-      "division": "Pacifique",
-      "full_name": "Los Angeles Lakers",
-      "name": "Lakers",
+      "abbreviation": "MEM",
+      "city": "Memphis",
+      "conference": "West",
+      "division": "Southwest",
+      "full_name": "Memphis Grizzlies",
+      "name": "Grizzlies",
       "players": [
         {
-          "nom": "LeBron James",
-          "points": 25.8,
-          "rebonds": 7.5,
-          "passes": 8.3,
-          "interceptions": 1.3,
-          "historique": [
+          "name": "Ja Morant",
+          "points": 25.1,
+          "rebounds": 5.6,
+          "assists": 8.1,
+          "steals": 1.0,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 25.8,
-              "rebonds": 7.5,
-              "passes": 8.3,
-              "interceptions": 1.3
+              "year": "2023-2024",
+              "points": 25.1,
+              "rebounds": 5.6,
+              "assists": 8.1,
+              "steals": 1.0
             },
             {
-              "annee": "2022-2023",
-              "points": 28.9,
-              "rebonds": 8.3,
-              "passes": 6.8,
-              "interceptions": 0.9
+              "year": "2022-2023",
+              "points": 26.2,
+              "rebounds": 5.9,
+              "assists": 8.1,
+              "steals": 1.1
             },
             {
-              "annee": "2021-2022",
-              "points": 30.3,
-              "rebonds": 8.2,
-              "passes": 6.2,
-              "interceptions": 1.3
+              "year": "2021-2022",
+              "points": 27.4,
+              "rebounds": 5.7,
+              "assists": 6.7,
+              "steals": 1.2
             }
           ]
         },
         {
-          "nom": "Anthony Davis",
-          "points": 24.9,
-          "rebonds": 12.8,
-          "passes": 3.4,
-          "interceptions": 1.2,
-          "historique": [
+          "name": "Jaren Jackson Jr.",
+          "points": 21.8,
+          "rebounds": 5.6,
+          "assists": 1.8,
+          "steals": 1.0,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 24.9,
-              "rebonds": 12.8,
-              "passes": 3.4,
-              "interceptions": 1.2
+              "year": "2023-2024",
+              "points": 21.8,
+              "rebounds": 5.6,
+              "assists": 1.8,
+              "steals": 1.0
             },
             {
-              "annee": "2022-2023",
-              "points": 25.9,
-              "rebonds": 12.5,
-              "passes": 2.6,
-              "interceptions": 1.1
+              "year": "2022-2023",
+              "points": 18.6,
+              "rebounds": 6.8,
+              "assists": 1.0,
+              "steals": 1.0
             },
             {
-              "annee": "2021-2022",
-              "points": 23.2,
-              "rebonds": 9.9,
-              "passes": 3.0,
-              "interceptions": 1.2
+              "year": "2021-2022",
+              "points": 16.3,
+              "rebounds": 5.8,
+              "assists": 1.1,
+              "steals": 0.9
             }
           ]
         },
         {
-          "nom": "Austin Reaves",
-          "points": 15.7,
-          "rebonds": 4.3,
-          "passes": 5.5,
-          "interceptions": 0.9,
-          "historique": [
+          "name": "Marcus Smart",
+          "points": 14.5,
+          "rebounds": 2.7,
+          "assists": 4.3,
+          "steals": 2.1,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 15.7,
-              "rebonds": 4.3,
-              "passes": 5.5,
-              "interceptions": 0.9
+              "year": "2023-2024",
+              "points": 14.5,
+              "rebounds": 2.7,
+              "assists": 4.3,
+              "steals": 2.1
             },
             {
-              "annee": "2022-2023",
-              "points": 13.0,
-              "rebonds": 3.0,
-              "passes": 3.4,
-              "interceptions": 0.5
+              "year": "2022-2023",
+              "points": 11.5,
+              "rebounds": 3.1,
+              "assists": 6.3,
+              "steals": 1.5
             },
             {
-              "annee": "2021-2022",
-              "points": 7.3,
-              "rebonds": 3.2,
-              "passes": 1.8,
-              "interceptions": 0.5
+              "year": "2021-2022",
+              "points": 12.1,
+              "rebounds": 3.8,
+              "assists": 5.9,
+              "steals": 1.7
             }
           ]
         }
@@ -1415,100 +1417,100 @@ export const allTeams = [
     },
     {
       "id": 15,
-      "abbreviation": "MEM",
-      "city": "Memphis",
-      "conference": "Ouest",
-      "division": "Sud-Ouest",
-      "full_name": "Memphis Grizzlies",
-      "name": "Grizzlies",
+      "abbreviation": "MIA",
+      "city": "Miami",
+      "conference": "East",
+      "division": "Southeast",
+      "full_name": "Miami Heat",
+      "name": "Heat",
       "players": [
         {
-          "nom": "Ja Morant",
-          "points": 25.4,
-          "rebonds": 5.6,
-          "passes": 8.1,
-          "interceptions": 1.1,
-          "historique": [
+          "name": "Jimmy Butler",
+          "points": 21.4,
+          "rebounds": 5.5,
+          "assists": 4.8,
+          "steals": 1.4,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 25.4,
-              "rebonds": 5.6,
-              "passes": 8.1,
-              "interceptions": 1.1
+              "year": "2023-2024",
+              "points": 21.4,
+              "rebounds": 5.5,
+              "assists": 4.8,
+              "steals": 1.4
             },
             {
-              "annee": "2022-2023",
-              "points": 26.2,
-              "rebonds": 5.9,
-              "passes": 8.1,
-              "interceptions": 1.1
+              "year": "2022-2023",
+              "points": 22.9,
+              "rebounds": 5.9,
+              "assists": 5.3,
+              "steals": 1.8
             },
             {
-              "annee": "2021-2022",
-              "points": 27.4,
-              "rebonds": 5.7,
-              "passes": 6.7,
-              "interceptions": 1.2
+              "year": "2021-2022",
+              "points": 21.4,
+              "rebounds": 5.9,
+              "assists": 5.5,
+              "steals": 1.6
             }
           ]
         },
         {
-          "nom": "Jaren Jackson Jr.",
-          "points": 21.8,
-          "rebonds": 6.5,
-          "passes": 2.2,
-          "interceptions": 1.0,
-          "historique": [
+          "name": "Bam Adebayo",
+          "points": 20.4,
+          "rebounds": 10.4,
+          "assists": 4.2,
+          "steals": 1.1,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 21.8,
-              "rebonds": 6.5,
-              "passes": 2.2,
-              "interceptions": 1.0
+              "year": "2023-2024",
+              "points": 20.4,
+              "rebounds": 10.4,
+              "assists": 4.2,
+              "steals": 1.1
             },
             {
-              "annee": "2022-2023",
-              "points": 18.6,
-              "rebonds": 6.8,
-              "passes": 1.0,
-              "interceptions": 1.0
+              "year": "2022-2023",
+              "points": 20.4,
+              "rebounds": 9.2,
+              "assists": 3.2,
+              "steals": 1.2
             },
             {
-              "annee": "2021-2022",
-              "points": 16.3,
-              "rebonds": 5.8,
-              "passes": 1.1,
-              "interceptions": 0.9
+              "year": "2021-2022",
+              "points": 19.1,
+              "rebounds": 10.1,
+              "assists": 3.4,
+              "steals": 1.4
             }
           ]
         },
         {
-          "nom": "Desmond Bane",
-          "points": 20.2,
-          "rebonds": 4.8,
-          "passes": 4.2,
-          "interceptions": 1.2,
-          "historique": [
+          "name": "Tyler Herro",
+          "points": 20.8,
+          "rebounds": 5.3,
+          "assists": 4.5,
+          "steals": 0.8,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 20.2,
-              "rebonds": 4.8,
-              "passes": 4.2,
-              "interceptions": 1.2
+              "year": "2023-2024",
+              "points": 20.8,
+              "rebounds": 5.3,
+              "assists": 4.5,
+              "steals": 0.8
             },
             {
-              "annee": "2022-2023",
-              "points": 21.5,
-              "rebonds": 5.0,
-              "passes": 4.4,
-              "interceptions": 1.0
+              "year": "2022-2023",
+              "points": 20.1,
+              "rebounds": 5.4,
+              "assists": 4.2,
+              "steals": 0.8
             },
             {
-              "annee": "2021-2022",
-              "points": 18.2,
-              "rebonds": 4.4,
-              "passes": 2.7,
-              "interceptions": 1.2
+              "year": "2021-2022",
+              "points": 20.7,
+              "rebounds": 5.0,
+              "assists": 4.0,
+              "steals": 0.7
             }
           ]
         }
@@ -1516,100 +1518,100 @@ export const allTeams = [
     },
     {
       "id": 16,
-      "abbreviation": "MIA",
-      "city": "Miami",
-      "conference": "Est",
-      "division": "Sud-Est",
-      "full_name": "Miami Heat",
-      "name": "Heat",
+      "abbreviation": "MIL",
+      "city": "Milwaukee",
+      "conference": "East",
+      "division": "Central",
+      "full_name": "Milwaukee Bucks",
+      "name": "Bucks",
       "players": [
         {
-          "nom": "Jimmy Butler",
-          "points": 21.5,
-          "rebonds": 5.8,
-          "passes": 5.2,
-          "interceptions": 1.7,
-          "historique": [
+          "name": "Giannis Antetokounmpo",
+          "points": 30.8,
+          "rebounds": 11.2,
+          "assists": 6.4,
+          "steals": 1.4,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 21.5,
-              "rebonds": 5.8,
-              "passes": 5.2,
-              "interceptions": 1.7
+              "year": "2023-2024",
+              "points": 30.8,
+              "rebounds": 11.2,
+              "assists": 6.4,
+              "steals": 1.4
             },
             {
-              "annee": "2022-2023",
-              "points": 22.9,
-              "rebonds": 5.9,
-              "passes": 5.3,
-              "interceptions": 1.8
+              "year": "2022-2023",
+              "points": 31.1,
+              "rebounds": 11.8,
+              "assists": 5.7,
+              "steals": 0.8
             },
             {
-              "annee": "2021-2022",
-              "points": 21.4,
-              "rebonds": 5.9,
-              "passes": 5.5,
-              "interceptions": 1.6
+              "year": "2021-2022",
+              "points": 29.9,
+              "rebounds": 11.6,
+              "assists": 5.8,
+              "steals": 1.1
             }
           ]
         },
         {
-          "nom": "Bam Adebayo",
-          "points": 19.8,
-          "rebonds": 10.5,
-          "passes": 3.9,
-          "interceptions": 1.2,
-          "historique": [
+          "name": "Damian Lillard",
+          "points": 24.3,
+          "rebounds": 4.4,
+          "assists": 6.7,
+          "steals": 1.0,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 19.8,
-              "rebonds": 10.5,
-              "passes": 3.9,
-              "interceptions": 1.2
+              "year": "2023-2024",
+              "points": 24.3,
+              "rebounds": 4.4,
+              "assists": 6.7,
+              "steals": 1.0
             },
             {
-              "annee": "2022-2023",
-              "points": 20.4,
-              "rebonds": 9.2,
-              "passes": 3.2,
-              "interceptions": 1.2
+              "year": "2022-2023",
+              "points": 32.2,
+              "rebounds": 4.8,
+              "assists": 7.3,
+              "steals": 0.9
             },
             {
-              "annee": "2021-2022",
-              "points": 19.1,
-              "rebonds": 10.1,
-              "passes": 3.4,
-              "interceptions": 1.4
+              "year": "2021-2022",
+              "points": 24.0,
+              "rebounds": 4.1,
+              "assists": 7.3,
+              "steals": 0.6
             }
           ]
         },
         {
-          "nom": "Tyler Herro",
-          "points": 20.1,
-          "rebonds": 5.0,
-          "passes": 4.5,
-          "interceptions": 0.8,
-          "historique": [
+          "name": "Khris Middleton",
+          "points": 15.1,
+          "rebounds": 4.2,
+          "assists": 5.3,
+          "steals": 0.9,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 20.1,
-              "rebonds": 5.0,
-              "passes": 4.5,
-              "interceptions": 0.8
+              "year": "2023-2024",
+              "points": 15.1,
+              "rebounds": 4.2,
+              "assists": 5.3,
+              "steals": 0.9
             },
             {
-              "annee": "2022-2023",
-              "points": 20.1,
-              "rebonds": 5.4,
-              "passes": 4.2,
-              "interceptions": 0.8
+              "year": "2022-2023",
+              "points": 15.1,
+              "rebounds": 4.2,
+              "assists": 4.9,
+              "steals": 0.7
             },
             {
-              "annee": "2021-2022",
-              "points": 20.7,
-              "rebonds": 5.0,
-              "passes": 4.0,
-              "interceptions": 0.7
+              "year": "2021-2022",
+              "points": 20.1,
+              "rebounds": 5.4,
+              "assists": 5.4,
+              "steals": 1.2
             }
           ]
         }
@@ -1617,100 +1619,100 @@ export const allTeams = [
     },
     {
       "id": 17,
-      "abbreviation": "MIL",
-      "city": "Milwaukee",
-      "conference": "Est",
-      "division": "Centrale",
-      "full_name": "Milwaukee Bucks",
-      "name": "Bucks",
+      "abbreviation": "MIN",
+      "city": "Minnesota",
+      "conference": "West",
+      "division": "Northwest",
+      "full_name": "Minnesota Timberwolves",
+      "name": "Timberwolves",
       "players": [
         {
-          "nom": "Giannis Antetokounmpo",
-          "points": 30.4,
-          "rebonds": 11.5,
-          "passes": 6.5,
-          "interceptions": 1.2,
-          "historique": [
+          "name": "Anthony Edwards",
+          "points": 26.1,
+          "rebounds": 5.4,
+          "assists": 5.1,
+          "steals": 1.3,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 30.4,
-              "rebonds": 11.5,
-              "passes": 6.5,
-              "interceptions": 1.2
+              "year": "2023-2024",
+              "points": 26.1,
+              "rebounds": 5.4,
+              "assists": 5.1,
+              "steals": 1.3
             },
             {
-              "annee": "2022-2023",
-              "points": 31.1,
-              "rebonds": 11.8,
-              "passes": 5.7,
-              "interceptions": 0.8
+              "year": "2022-2023",
+              "points": 24.6,
+              "rebounds": 5.8,
+              "assists": 4.4,
+              "steals": 1.6
             },
             {
-              "annee": "2021-2022",
-              "points": 29.9,
-              "rebonds": 11.6,
-              "passes": 5.8,
-              "interceptions": 1.1
+              "year": "2021-2022",
+              "points": 21.3,
+              "rebounds": 4.8,
+              "assists": 3.8,
+              "steals": 1.5
             }
           ]
         },
         {
-          "nom": "Damian Lillard",
-          "points": 24.2,
-          "rebonds": 4.4,
-          "passes": 7.0,
-          "interceptions": 1.0,
-          "historique": [
+          "name": "Karl-Anthony Towns",
+          "points": 22.1,
+          "rebounds": 8.4,
+          "assists": 3.0,
+          "steals": 0.7,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 24.2,
-              "rebonds": 4.4,
-              "passes": 7.0,
-              "interceptions": 1.0
+              "year": "2023-2024",
+              "points": 22.1,
+              "rebounds": 8.4,
+              "assists": 3.0,
+              "steals": 0.7
             },
             {
-              "annee": "2022-2023",
-              "points": 32.2,
-              "rebonds": 4.8,
-              "passes": 7.3,
-              "interceptions": 0.9
+              "year": "2022-2023",
+              "points": 20.8,
+              "rebounds": 8.1,
+              "assists": 4.8,
+              "steals": 0.7
             },
             {
-              "annee": "2021-2022",
-              "points": 24.0,
-              "rebonds": 4.1,
-              "passes": 7.3,
-              "interceptions": 0.6
+              "year": "2021-2022",
+              "points": 24.6,
+              "rebounds": 9.8,
+              "assists": 3.6,
+              "steals": 1.0
             }
           ]
         },
         {
-          "nom": "Khris Middleton",
-          "points": 15.1,
-          "rebonds": 4.8,
-          "passes": 5.3,
-          "interceptions": 0.9,
-          "historique": [
+          "name": "Rudy Gobert",
+          "points": 13.8,
+          "rebounds": 12.9,
+          "assists": 1.2,
+          "steals": 0.7,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 15.1,
-              "rebonds": 4.8,
-              "passes": 5.3,
-              "interceptions": 0.9
+              "year": "2023-2024",
+              "points": 13.8,
+              "rebounds": 12.9,
+              "assists": 1.2,
+              "steals": 0.7
             },
             {
-              "annee": "2022-2023",
-              "points": 15.1,
-              "rebonds": 4.2,
-              "passes": 4.9,
-              "interceptions": 0.7
+              "year": "2022-2023",
+              "points": 13.4,
+              "rebounds": 11.6,
+              "assists": 1.2,
+              "steals": 0.8
             },
             {
-              "annee": "2021-2022",
-              "points": 20.1,
-              "rebonds": 5.4,
-              "passes": 5.4,
-              "interceptions": 1.2
+              "year": "2021-2022",
+              "points": 15.6,
+              "rebounds": 14.7,
+              "assists": 1.1,
+              "steals": 0.7
             }
           ]
         }
@@ -1718,100 +1720,100 @@ export const allTeams = [
     },
     {
       "id": 18,
-      "abbreviation": "MIN",
-      "city": "Minnesota",
-      "conference": "Ouest",
-      "division": "Nord-Ouest",
-      "full_name": "Minnesota Timberwolves",
-      "name": "Timberwolves",
+      "abbreviation": "NOP",
+      "city": "New Orleans",
+      "conference": "West",
+      "division": "Southwest",
+      "full_name": "New Orleans Pelicans",
+      "name": "Pelicans",
       "players": [
         {
-          "nom": "Anthony Edwards",
-          "points": 26.2,
-          "rebonds": 5.4,
-          "passes": 5.1,
-          "interceptions": 1.3,
-          "historique": [
+          "name": "Zion Williamson",
+          "points": 22.8,
+          "rebounds": 5.8,
+          "assists": 4.6,
+          "steals": 1.1,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 26.2,
-              "rebonds": 5.4,
-              "passes": 5.1,
-              "interceptions": 1.3
+              "year": "2023-2024",
+              "points": 22.8,
+              "rebounds": 5.8,
+              "assists": 4.6,
+              "steals": 1.1
             },
             {
-              "annee": "2022-2023",
-              "points": 24.6,
-              "rebonds": 5.8,
-              "passes": 4.4,
-              "interceptions": 1.6
+              "year": "2022-2023",
+              "points": 26.0,
+              "rebounds": 7.0,
+              "assists": 4.6,
+              "steals": 1.1
             },
             {
-              "annee": "2021-2022",
-              "points": 21.3,
-              "rebonds": 4.8,
-              "passes": 3.8,
-              "interceptions": 1.5
+              "year": "2021-2022",
+              "points": 27.0,
+              "rebounds": 7.2,
+              "assists": 3.7,
+              "steals": 0.6
             }
           ]
         },
         {
-          "nom": "Karl-Anthony Towns",
-          "points": 21.8,
-          "rebonds": 8.3,
-          "passes": 3.0,
-          "interceptions": 0.7,
-          "historique": [
+          "name": "Brandon Ingram",
+          "points": 20.8,
+          "rebounds": 5.1,
+          "assists": 5.7,
+          "steals": 0.8,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 21.8,
-              "rebonds": 8.3,
-              "passes": 3.0,
-              "interceptions": 0.7
-            },
-            {
-              "annee": "2022-2023",
+              "year": "2023-2024",
               "points": 20.8,
-              "rebonds": 8.1,
-              "passes": 4.8,
-              "interceptions": 0.7
+              "rebounds": 5.1,
+              "assists": 5.7,
+              "steals": 0.8
             },
             {
-              "annee": "2021-2022",
-              "points": 24.6,
-              "rebonds": 9.8,
-              "passes": 3.6,
-              "interceptions": 1.0
+              "year": "2022-2023",
+              "points": 24.7,
+              "rebounds": 5.5,
+              "assists": 5.8,
+              "steals": 0.7
+            },
+            {
+              "year": "2021-2022",
+              "points": 22.7,
+              "rebounds": 5.8,
+              "assists": 5.6,
+              "steals": 0.6
             }
           ]
         },
         {
-          "nom": "Rudy Gobert",
-          "points": 14.0,
-          "rebonds": 12.9,
-          "passes": 1.2,
-          "interceptions": 0.7,
-          "historique": [
+          "name": "CJ McCollum",
+          "points": 20.0,
+          "rebounds": 4.3,
+          "assists": 4.6,
+          "steals": 1.1,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 14.0,
-              "rebonds": 12.9,
-              "passes": 1.2,
-              "interceptions": 0.7
+              "year": "2023-2024",
+              "points": 20.0,
+              "rebounds": 4.3,
+              "assists": 4.6,
+              "steals": 1.1
             },
             {
-              "annee": "2022-2023",
-              "points": 13.4,
-              "rebonds": 11.6,
-              "passes": 1.2,
-              "interceptions": 0.8
+              "year": "2022-2023",
+              "points": 20.9,
+              "rebounds": 4.4,
+              "assists": 5.7,
+              "steals": 0.9
             },
             {
-              "annee": "2021-2022",
-              "points": 15.6,
-              "rebonds": 14.7,
-              "passes": 1.1,
-              "interceptions": 0.7
+              "year": "2021-2022",
+              "points": 22.1,
+              "rebounds": 4.3,
+              "assists": 5.1,
+              "steals": 1.1
             }
           ]
         }
@@ -1819,100 +1821,100 @@ export const allTeams = [
     },
     {
       "id": 19,
-      "abbreviation": "NOP",
-      "city": "New Orleans",
-      "conference": "Ouest",
-      "division": "Sud-Ouest",
-      "full_name": "New Orleans Pelicans",
-      "name": "Pelicans",
+      "abbreviation": "NYK",
+      "city": "New York",
+      "conference": "East",
+      "division": "Atlantic",
+      "full_name": "New York Knicks",
+      "name": "Knicks",
       "players": [
         {
-          "nom": "Zion Williamson",
-          "points": 23.5,
-          "rebonds": 6.9,
-          "passes": 5.0,
-          "interceptions": 1.1,
-          "historique": [
+          "name": "Jalen Brunson",
+          "points": 27.9,
+          "rebounds": 3.6,
+          "assists": 6.5,
+          "steals": 0.9,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 23.5,
-              "rebonds": 6.9,
-              "passes": 5.0,
-              "interceptions": 1.1
+              "year": "2023-2024",
+              "points": 27.9,
+              "rebounds": 3.6,
+              "assists": 6.5,
+              "steals": 0.9
             },
             {
-              "annee": "2022-2023",
-              "points": 26.0,
-              "rebonds": 7.0,
-              "passes": 4.6,
-              "interceptions": 1.1
+              "year": "2022-2023",
+              "points": 24.0,
+              "rebounds": 3.5,
+              "assists": 6.2,
+              "steals": 0.9
             },
             {
-              "annee": "2021-2022",
-              "points": 0.0,
-              "rebonds": 0.0,
-              "passes": 0.0,
-              "interceptions": 0.0
+              "year": "2021-2022",
+              "points": 16.3,
+              "rebounds": 3.9,
+              "assists": 4.8,
+              "steals": 0.8
             }
           ]
         },
         {
-          "nom": "Brandon Ingram",
-          "points": 21.2,
-          "rebonds": 5.2,
-          "passes": 5.7,
-          "interceptions": 0.7,
-          "historique": [
+          "name": "Julius Randle",
+          "points": 24.0,
+          "rebounds": 9.2,
+          "assists": 5.0,
+          "steals": 0.5,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 21.2,
-              "rebonds": 5.2,
-              "passes": 5.7,
-              "interceptions": 0.7
+              "year": "2023-2024",
+              "points": 24.0,
+              "rebounds": 9.2,
+              "assists": 5.0,
+              "steals": 0.5
             },
             {
-              "annee": "2022-2023",
-              "points": 24.7,
-              "rebonds": 5.5,
-              "passes": 5.8,
-              "interceptions": 0.7
+              "year": "2022-2023",
+              "points": 25.1,
+              "rebounds": 10.0,
+              "assists": 4.1,
+              "steals": 0.6
             },
             {
-              "annee": "2021-2022",
-              "points": 22.7,
-              "rebonds": 5.8,
-              "passes": 5.6,
-              "interceptions": 0.6
+              "year": "2021-2022",
+              "points": 20.1,
+              "rebounds": 9.9,
+              "assists": 5.1,
+              "steals": 0.7
             }
           ]
         },
         {
-          "nom": "CJ McCollum",
-          "points": 19.8,
-          "rebonds": 4.1,
-          "passes": 4.6,
-          "interceptions": 0.9,
-          "historique": [
+          "name": "RJ Barrett",
+          "points": 18.2,
+          "rebounds": 4.3,
+          "assists": 2.4,
+          "steals": 0.4,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 19.8,
-              "rebonds": 4.1,
-              "passes": 4.6,
-              "interceptions": 0.9
+              "year": "2023-2024",
+              "points": 18.2,
+              "rebounds": 4.3,
+              "assists": 2.4,
+              "steals": 0.4
             },
             {
-              "annee": "2022-2023",
-              "points": 20.9,
-              "rebonds": 4.4,
-              "passes": 5.7,
-              "interceptions": 0.9
+              "year": "2022-2023",
+              "points": 19.6,
+              "rebounds": 5.0,
+              "assists": 2.8,
+              "steals": 0.7
             },
             {
-              "annee": "2021-2022",
-              "points": 22.1,
-              "rebonds": 4.3,
-              "passes": 5.1,
-              "interceptions": 1.1
+              "year": "2021-2022",
+              "points": 20.1,
+              "rebounds": 5.8,
+              "assists": 3.0,
+              "steals": 0.6
             }
           ]
         }
@@ -1920,100 +1922,86 @@ export const allTeams = [
     },
     {
       "id": 20,
-      "abbreviation": "NYK",
-      "city": "New York",
-      "conference": "Est",
-      "division": "Atlantique",
-      "full_name": "New York Knicks",
-      "name": "Knicks",
+      "abbreviation": "OKC",
+      "city": "Oklahoma City",
+      "conference": "West",
+      "division": "Northwest",
+      "full_name": "Oklahoma City Thunder",
+      "name": "Thunder",
       "players": [
         {
-          "nom": "Jalen Brunson",
-          "points": 28.7,
-          "rebonds": 3.6,
-          "passes": 6.7,
-          "interceptions": 0.9,
-          "historique": [
+          "name": "Shai Gilgeous-Alexander",
+          "points": 30.1,
+          "rebounds": 5.5,
+          "assists": 6.2,
+          "steals": 2.0,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 28.7,
-              "rebonds": 3.6,
-              "passes": 6.7,
-              "interceptions": 0.9
+              "year": "2023-2024",
+              "points": 30.1,
+              "rebounds": 5.5,
+              "assists": 6.2,
+              "steals": 2.0
             },
             {
-              "annee": "2022-2023",
-              "points": 24.0,
-              "rebonds": 3.5,
-              "passes": 6.2,
-              "interceptions": 0.9
+              "year": "2022-2023",
+              "points": 31.4,
+              "rebounds": 4.8,
+              "assists": 5.5,
+              "steals": 1.6
             },
             {
-              "annee": "2021-2022",
-              "points": 16.3,
-              "rebonds": 3.9,
-              "passes": 4.8,
-              "interceptions": 0.8
+              "year": "2021-2022",
+              "points": 24.5,
+              "rebounds": 5.0,
+              "assists": 5.9,
+              "steals": 1.3
             }
           ]
         },
         {
-          "nom": "Julius Randle",
-          "points": 22.5,
-          "rebonds": 9.2,
-          "passes": 4.5,
-          "interceptions": 0.6,
-          "historique": [
+          "name": "Chet Holmgren",
+          "points": 16.8,
+          "rebounds": 7.9,
+          "assists": 2.5,
+          "steals": 0.7,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 22.5,
-              "rebonds": 9.2,
-              "passes": 4.5,
-              "interceptions": 0.6
-            },
-            {
-              "annee": "2022-2023",
-              "points": 25.1,
-              "rebonds": 10.0,
-              "passes": 4.1,
-              "interceptions": 0.6
-            },
-            {
-              "annee": "2021-2022",
-              "points": 20.1,
-              "rebonds": 9.9,
-              "passes": 5.1,
-              "interceptions": 0.7
-            }
-          ]
-        },
-        {
-          "nom": "OG Anunoby",
-          "points": 15.2,
-          "rebonds": 5.0,
-          "passes": 2.2,
-          "interceptions": 1.3,
-          "historique": [
-            {
-              "annee": "2023-2024",
-              "points": 15.2,
-              "rebonds": 5.0,
-              "passes": 2.2,
-              "interceptions": 1.3
-            },
-            {
-              "annee": "2022-2023",
+              "year": "2023-2024",
               "points": 16.8,
-              "rebonds": 5.0,
-              "passes": 2.0,
-              "interceptions": 1.9
+              "rebounds": 7.9,
+              "assists": 2.5,
+              "steals": 0.7
             },
             {
-              "annee": "2021-2022",
-              "points": 17.1,
-              "rebonds": 5.5,
-              "passes": 2.6,
-              "interceptions": 1.5
+              "year": "2022-2023",
+              "points": 0.0,
+              "rebounds": 0.0,
+              "assists": 0.0,
+              "steals": 0.0
+            }
+          ]
+        },
+        {
+          "name": "Jalen Williams",
+          "points": 19.1,
+          "rebounds": 4.5,
+          "assists": 4.5,
+          "steals": 1.1,
+          "history": [
+            {
+              "year": "2023-2024",
+              "points": 19.1,
+              "rebounds": 4.5,
+              "assists": 4.5,
+              "steals": 1.1
+            },
+            {
+              "year": "2022-2023",
+              "points": 14.1,
+              "rebounds": 4.5,
+              "assists": 3.3,
+              "steals": 1.4
             }
           ]
         }
@@ -2021,100 +2009,70 @@ export const allTeams = [
     },
     {
       "id": 21,
-      "abbreviation": "OKC",
-      "city": "Oklahoma City",
-      "conference": "Ouest",
-      "division": "Nord-Ouest",
-      "full_name": "Oklahoma City Thunder",
-      "name": "Thunder",
+      "abbreviation": "ORL",
+      "city": "Orlando",
+      "conference": "East",
+      "division": "Southeast",
+      "full_name": "Orlando Magic",
+      "name": "Magic",
       "players": [
         {
-          "nom": "Shai Gilgeous-Alexander",
-          "points": 30.1,
-          "rebonds": 5.5,
-          "passes": 6.2,
-          "interceptions": 2.0,
-          "historique": [
+          "name": "Paolo Banchero",
+          "points": 22.8,
+          "rebounds": 6.9,
+          "assists": 5.4,
+          "steals": 0.9,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 30.1,
-              "rebonds": 5.5,
-              "passes": 6.2,
-              "interceptions": 2.0
+              "year": "2023-2024",
+              "points": 22.8,
+              "rebounds": 6.9,
+              "assists": 5.4,
+              "steals": 0.9
             },
             {
-              "annee": "2022-2023",
-              "points": 31.4,
-              "rebonds": 4.8,
-              "passes": 5.5,
-              "interceptions": 1.6
+              "year": "2022-2023",
+              "points": 20.0,
+              "rebounds": 6.9,
+              "assists": 3.7,
+              "steals": 0.8
             },
             {
-              "annee": "2021-2022",
-              "points": 24.5,
-              "rebonds": 5.0,
-              "passes": 5.9,
-              "interceptions": 1.3
+              "year": "2021-2022",
+              "points": 0.0,
+              "rebounds": 0.0,
+              "assists": 0.0,
+              "steals": 0.0
             }
           ]
         },
         {
-          "nom": "Chet Holmgren",
-          "points": 16.8,
-          "rebonds": 7.9,
-          "passes": 2.5,
-          "interceptions": 0.7,
-          "historique": [
+          "name": "Franz Wagner",
+          "points": 19.7,
+          "rebounds": 5.3,
+          "assists": 3.8,
+          "steals": 1.1,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 16.8,
-              "rebonds": 7.9,
-              "passes": 2.5,
-              "interceptions": 0.7
+              "year": "2023-2024",
+              "points": 19.7,
+              "rebounds": 5.3,
+              "assists": 3.8,
+              "steals": 1.1
             },
             {
-              "annee": "2022-2023",
-              "points": 0.0,
-              "rebonds": 0.0,
-              "passes": 0.0,
-              "interceptions": 0.0
+              "year": "2022-2023",
+              "points": 18.6,
+              "rebounds": 4.1,
+              "assists": 3.5,
+              "steals": 0.9
             },
             {
-              "annee": "2021-2022",
-              "points": 0.0,
-              "rebonds": 0.0,
-              "passes": 0.0,
-              "interceptions": 0.0
-            }
-          ]
-        },
-        {
-          "nom": "Jalen Williams",
-          "points": 19.1,
-          "rebonds": 4.5,
-          "passes": 4.5,
-          "interceptions": 1.1,
-          "historique": [
-            {
-              "annee": "2023-2024",
-              "points": 19.1,
-              "rebonds": 4.5,
-              "passes": 4.5,
-              "interceptions": 1.1
-            },
-            {
-              "annee": "2022-2023",
-              "points": 14.1,
-              "rebonds": 4.5,
-              "passes": 3.3,
-              "interceptions": 1.4
-            },
-            {
-              "annee": "2021-2022",
-              "points": 0.0,
-              "rebonds": 0.0,
-              "passes": 0.0,
-              "interceptions": 0.0
+              "year": "2021-2022",
+              "points": 15.2,
+              "rebounds": 4.5,
+              "assists": 2.9,
+              "steals": 0.9
             }
           ]
         }
@@ -2122,100 +2080,100 @@ export const allTeams = [
     },
     {
       "id": 22,
-      "abbreviation": "ORL",
-      "city": "Orlando",
-      "conference": "Est",
-      "division": "Sud-Est",
-      "full_name": "Orlando Magic",
-      "name": "Magic",
+      "abbreviation": "PHI",
+      "city": "Philadelphia",
+      "conference": "East",
+      "division": "Atlantic",
+      "full_name": "Philadelphia 76ers",
+      "name": "76ers",
       "players": [
         {
-          "nom": "Paolo Banchero",
-          "points": 22.8,
-          "rebonds": 6.9,
-          "passes": 5.4,
-          "interceptions": 0.9,
-          "historique": [
+          "name": "Joel Embiid",
+          "points": 29.7,
+          "rebounds": 11.2,
+          "assists": 5.6,
+          "steals": 1.1,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 22.8,
-              "rebonds": 6.9,
-              "passes": 5.4,
-              "interceptions": 0.9
+              "year": "2023-2024",
+              "points": 29.7,
+              "rebounds": 11.2,
+              "assists": 5.6,
+              "steals": 1.1
             },
             {
-              "annee": "2022-2023",
-              "points": 20.0,
-              "rebonds": 6.9,
-              "passes": 3.7,
-              "interceptions": 0.8
+              "year": "2022-2023",
+              "points": 33.1,
+              "rebounds": 10.2,
+              "assists": 4.2,
+              "steals": 1.0
             },
             {
-              "annee": "2021-2022",
-              "points": 0.0,
-              "rebonds": 0.0,
-              "passes": 0.0,
-              "interceptions": 0.0
+              "year": "2021-2022",
+              "points": 30.6,
+              "rebounds": 11.7,
+              "assists": 4.2,
+              "steals": 1.1
             }
           ]
         },
         {
-          "nom": "Franz Wagner",
-          "points": 19.7,
-          "rebonds": 5.3,
-          "passes": 3.8,
-          "interceptions": 1.1,
-          "historique": [
+          "name": "Tyrese Maxey",
+          "points": 25.9,
+          "rebounds": 3.7,
+          "assists": 6.2,
+          "steals": 1.0,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 19.7,
-              "rebonds": 5.3,
-              "passes": 3.8,
-              "interceptions": 1.1
+              "year": "2023-2024",
+              "points": 25.9,
+              "rebounds": 3.7,
+              "assists": 6.2,
+              "steals": 1.0
             },
             {
-              "annee": "2022-2023",
-              "points": 18.6,
-              "rebonds": 4.1,
-              "passes": 3.5,
-              "interceptions": 0.9
+              "year": "2022-2023",
+              "points": 20.3,
+              "rebounds": 2.9,
+              "assists": 3.5,
+              "steals": 0.8
             },
             {
-              "annee": "2021-2022",
-              "points": 15.2,
-              "rebonds": 4.5,
-              "passes": 2.9,
-              "interceptions": 0.9
+              "year": "2021-2022",
+              "points": 17.5,
+              "rebounds": 3.2,
+              "assists": 4.3,
+              "steals": 0.7
             }
           ]
         },
         {
-          "nom": "Jalen Suggs",
-          "points": 12.6,
-          "rebonds": 3.1,
-          "passes": 4.5,
-          "interceptions": 1.8,
-          "historique": [
+          "name": "Paul George",
+          "points": 23.1,
+          "rebounds": 5.3,
+          "assists": 3.6,
+          "steals": 1.5,
+          "history": [
             {
-              "annee": "2023-2024",
-              "points": 12.6,
-              "rebonds": 3.1,
-              "passes": 4.5,
-              "interceptions": 1.8
+              "year": "2023-2024",
+              "points": 23.1,
+              "rebounds": 5.3,
+              "assists": 3.6,
+              "steals": 1.5
             },
             {
-              "annee": "2022-2023",
-              "points": 9.9,
-              "rebonds": 3.0,
-              "passes": 2.9,
-              "interceptions": 1.4
+              "year": "2022-2023",
+              "points": 23.8,
+              "rebounds": 6.1,
+              "assists": 5.1,
+              "steals": 1.5
             },
             {
-              "annee": "2021-2022",
-              "points": 11.8,
-              "rebonds": 3.6,
-              "passes": 4.4,
-              "interceptions": 1.2
+              "year": "2021-2022",
+              "points": 24.3,
+              "rebounds": 6.9,
+              "assists": 5.7,
+              "steals": 2.2
             }
           ]
         }
@@ -2223,201 +2181,100 @@ export const allTeams = [
     },
     {
       "id": 23,
-      "abbreviation": "PHI",
-      "city": "Philadelphia",
-      "conference": "Est",
-      "division": "Atlantique",
-      "full_name": "Philadelphia 76ers",
-      "name": "76ers",
-      "players": [
-        {
-          "nom": "Joel Embiid",
-          "points": 29.7,
-          "rebonds": 11.2,
-          "passes": 5.6,
-          "interceptions": 1.1,
-          "historique": [
-            {
-              "annee": "2023-2024",
-              "points": 29.7,
-              "rebonds": 11.2,
-              "passes": 5.6,
-              "interceptions": 1.1
-            },
-            {
-              "annee": "2022-2023",
-              "points": 33.1,
-              "rebonds": 10.2,
-              "passes": 4.2,
-              "interceptions": 1.0
-            },
-            {
-              "annee": "2021-2022",
-              "points": 30.6,
-              "rebonds": 11.7,
-              "passes": 4.2,
-              "interceptions": 1.1
-            }
-          ]
-        },
-        {
-          "nom": "Tyrese Maxey",
-          "points": 25.9,
-          "rebonds": 3.7,
-          "passes": 6.2,
-          "interceptions": 1.0,
-          "historique": [
-            {
-              "annee": "2023-2024",
-              "points": 25.9,
-              "rebonds": 3.7,
-              "passes": 6.2,
-              "interceptions": 1.0
-            },
-            {
-              "annee": "2022-2023",
-              "points": 20.3,
-              "rebonds": 2.9,
-              "passes": 3.5,
-              "interceptions": 0.8
-            },
-            {
-              "annee": "2021-2022",
-              "points": 17.5,
-              "rebonds": 3.2,
-              "passes": 4.3,
-              "interceptions": 0.7
-            }
-          ]
-        },
-        {
-          "nom": "Paul George",
-          "points": 23.1,
-          "rebonds": 5.3,
-          "passes": 3.6,
-          "interceptions": 1.5,
-          "historique": [
-            {
-              "annee": "2023-2024",
-              "points": 23.1,
-              "rebonds": 5.3,
-              "passes": 3.6,
-              "interceptions": 1.5
-            },
-            {
-              "annee": "2022-2023",
-              "points": 23.8,
-              "rebonds": 6.1,
-              "passes": 5.1,
-              "interceptions": 1.5
-            },
-            {
-              "annee": "2021-2022",
-              "points": 24.3,
-              "rebonds": 6.9,
-              "passes": 5.7,
-              "interceptions": 2.2
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 24,
       "abbreviation": "PHX",
       "city": "Phoenix",
-      "conference": "Ouest",
-      "division": "Pacifique",
+      "conference": "West",
+      "division": "Pacific",
       "full_name": "Phoenix Suns",
       "name": "Suns",
       "players": [
         {
-          "nom": "Kevin Durant",
+          "name": "Kevin Durant",
           "points": 27.1,
-          "rebonds": 6.6,
-          "passes": 5.2,
-          "interceptions": 0.9,
-          "historique": [
+          "rebounds": 6.6,
+          "assists": 5.2,
+          "steals": 0.9,
+          "history": [
             {
-              "annee": "2023-2024",
+              "year": "2023-2024",
               "points": 27.1,
-              "rebonds": 6.6,
-              "passes": 5.2,
-              "interceptions": 0.9
+              "rebounds": 6.6,
+              "assists": 5.2,
+              "steals": 0.9
             },
             {
-              "annee": "2022-2023",
+              "year": "2022-2023",
               "points": 29.1,
-              "rebonds": 6.7,
-              "passes": 5.0,
-              "interceptions": 0.9
+              "rebounds": 6.7,
+              "assists": 5.0,
+              "steals": 0.9
             },
             {
-              "annee": "2021-2022",
+              "year": "2021-2022",
               "points": 29.9,
-              "rebonds": 7.4,
-              "passes": 6.4,
-              "interceptions": 0.9
+              "rebounds": 7.4,
+              "assists": 6.4,
+              "steals": 0.9
             }
           ]
         },
         {
-          "nom": "Devin Booker",
+          "name": "Devin Booker",
           "points": 27.5,
-          "rebonds": 4.5,
-          "passes": 6.8,
-          "interceptions": 1.0,
-          "historique": [
+          "rebounds": 4.5,
+          "assists": 6.8,
+          "steals": 1.0,
+          "history": [
             {
-              "annee": "2023-2024",
+              "year": "2023-2024",
               "points": 27.5,
-              "rebonds": 4.5,
-              "passes": 6.8,
-              "interceptions": 1.0
+              "rebounds": 4.5,
+              "assists": 6.8,
+              "steals": 1.0
             },
             {
-              "annee": "2022-2023",
+              "year": "2022-2023",
               "points": 27.8,
-              "rebonds": 4.5,
-              "passes": 5.5,
-              "interceptions": 1.0
+              "rebounds": 4.5,
+              "assists": 5.5,
+              "steals": 1.0
             },
             {
-              "annee": "2021-2022",
+              "year": "2021-2022",
               "points": 26.8,
-              "rebonds": 5.0,
-              "passes": 4.8,
-              "interceptions": 1.1
+              "rebounds": 5.0,
+              "assists": 4.8,
+              "steals": 1.1
             }
           ]
         },
         {
-          "nom": "Bradley Beal",
+          "name": "Bradley Beal",
           "points": 18.2,
-          "rebonds": 4.0,
-          "passes": 5.0,
-          "interceptions": 0.9,
-          "historique": [
+          "rebounds": 4.0,
+          "assists": 5.0,
+          "steals": 0.9,
+          "history": [
             {
-              "annee": "2023-2024",
+              "year": "2023-2024",
               "points": 18.2,
-              "rebonds": 4.0,
-              "passes": 5.0,
-              "interceptions": 0.9
+              "rebounds": 4.0,
+              "assists": 5.0,
+              "steals": 0.9
             },
             {
-              "annee": "2022-2023",
+              "year": "2022-2023",
               "points": 23.2,
-              "rebonds": 3.9,
-              "passes": 5.4,
-              "interceptions": 0.9
+              "rebounds": 3.9,
+              "assists": 5.4,
+              "steals": 0.9
             },
             {
-              "annee": "2021-2022",
+              "year": "2021-2022",
               "points": 23.2,
-              "rebonds": 4.7,
-              "passes": 6.6,
-              "interceptions": 0.9
+              "rebounds": 4.7,
+              "assists": 6.6,
+              "steals": 0.9
             }
           ]
         }
