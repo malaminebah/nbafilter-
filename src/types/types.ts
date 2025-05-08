@@ -1,4 +1,4 @@
-// Types pour les joueurs
+
 export interface Player {
   name: string;
   points: number;
@@ -8,7 +8,7 @@ export interface Player {
   history?: Statistics[];
 }
 
-// Types pour les statistiques
+
 export interface Statistics {
   year: string;
   points: number;
@@ -17,7 +17,7 @@ export interface Statistics {
   steals: number;
 }
 
-// Types pour les équipes
+
 export interface Team {
   id: number;
   abbreviation: string;
@@ -29,7 +29,4 @@ export interface Team {
   players: Player[];
 }
 
-// Type pour les données des équipes
-export interface TeamsData {
-  allTeams: Team[];
-}
+

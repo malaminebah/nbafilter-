@@ -1,10 +1,7 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import PlayerDetails from '../pages/PlayerDetails';
 
-// Mock le module data/NbaTeams pour contrôler les données
+
 jest.mock('../../data/NbaTeams', () => ({
   allTeams: [
     {
@@ -56,7 +53,7 @@ jest.mock('../../data/NbaTeams', () => ({
       division: "Atlantic",
       full_name: "Boston Celtics",
       name: "Celtics",
-      players: []  // Équipe sans joueurs
+      players: []  
     },
     {
       id: 3,
@@ -80,18 +77,8 @@ jest.mock('../../data/NbaTeams', () => ({
   ]
 }));
 
-// Helper pour envelopper le composant avec Router et les paramètres
-const renderWithRouter = (playerName: string) => {
-  return render(
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<PlayerDetails />} />
-      </Routes>
-    </BrowserRouter>
-  );
-};
 
-// Composants mock pour simuler les différents états
+
 const MockLoadingComponent = () => (
   <div className="flex justify-center items-center h-64">Chargement...</div>
 );
@@ -111,7 +98,6 @@ const MockPlayerComponent = () => (
           <p className="text-gray-600 mt-2">Atlanta Hawks</p>
         </div>
         
-        {/* Statistiques actuelles */}
         <div className="mb-8">
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">Saison actuelle (2023-2024)</h2>
           <div className="grid grid-cols-2 gap-6">
@@ -144,7 +130,6 @@ const MockPlayerComponent = () => (
           </div>
         </div>
         
-        {/* Tableau d'historique */}
         <div>
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">Historique des saisons</h2>
           <table className="min-w-full">
@@ -196,7 +181,6 @@ const MockPlayerWithoutStatsComponent = () => (
           <p className="text-gray-600 mt-2">Phoenix Suns</p>
         </div>
         
-        {/* Statistiques actuelles */}
         <div className="mb-8">
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">Saison actuelle (2023-2024)</h2>
           <div className="grid grid-cols-2 gap-6">
@@ -229,7 +213,6 @@ const MockPlayerWithoutStatsComponent = () => (
           </div>
         </div>
         
-        {/* Message pour joueur sans historique */}
         <div className="mt-6 text-center">
           <p data-testid="no-stats-message" className="text-gray-500">
             Aucun historique de statistiques disponible pour ce joueur
@@ -250,13 +233,11 @@ const MockEmptyTeamComponent = () => (
 );
 
 describe('PlayerDetails Component', () => {
-  // Test 1: Affichage de l'état de chargement
   test('affiche correctement l\'état de chargement', () => {
     render(<MockLoadingComponent />);
     expect(screen.getByText(/chargement/i)).toBeInTheDocument();
   });
 
-  // Test 2: Affichage du message d'erreur
   test('affiche un message d\'erreur si l\'appel API échoue', () => {
     render(<MockErrorComponent />);
     const errorElement = screen.getByTestId('error-message');
@@ -264,15 +245,12 @@ describe('PlayerDetails Component', () => {
     expect(errorElement.textContent).toContain('Erreur:');
   });
 
-  // Test 3: Affichage correct des données du joueur
   test('affiche correctement les données du joueur', () => {
     render(<MockPlayerComponent />);
     
-    // Vérifier le nom du joueur et de l'équipe
     expect(screen.getByText('Trae Young')).toBeInTheDocument();
     expect(screen.getByText('Atlanta Hawks')).toBeInTheDocument();
     
-    // Vérifier les statistiques offensives
     const statsOffensive = screen.getByTestId('stats-offensive');
     expect(statsOffensive).toBeInTheDocument();
     expect(statsOffensive).toHaveTextContent('Points par match');
@@ -280,7 +258,6 @@ describe('PlayerDetails Component', () => {
     expect(statsOffensive).toHaveTextContent('Passes décisives');
     expect(statsOffensive).toHaveTextContent('9.4');
     
-    // Vérifier les statistiques défensives
     const statsDefensive = screen.getByTestId('stats-defensive');
     expect(statsDefensive).toBeInTheDocument();
     expect(statsDefensive).toHaveTextContent('Rebonds par match');
@@ -289,26 +266,21 @@ describe('PlayerDetails Component', () => {
     expect(statsDefensive).toHaveTextContent('1.1');
   });
 
-  // Test 4: Vérification que les statistiques historiques sont triées par saison (descendant)
   test('affiche les statistiques historiques triées par saison (descendant)', () => {
     render(<MockPlayerComponent />);
     
-    // Vérifier que le tableau d'historique est présent
     const statsTable = screen.getByTestId('stats-table');
     expect(statsTable).toBeInTheDocument();
     
-    // Récupérer les lignes du tableau
     const row0 = screen.getByTestId('stats-row-0');
     const row1 = screen.getByTestId('stats-row-1');
     const row2 = screen.getByTestId('stats-row-2');
     
-    // Vérifier que les saisons sont dans l'ordre descendant
     expect(row0).toHaveTextContent('2023-2024');
     expect(row1).toHaveTextContent('2022-2023');
     expect(row2).toHaveTextContent('2021-2022');
   });
 
-  // Test 5: Cas où un joueur n'a pas de statistiques historiques
   test('affiche un message approprié si le joueur n\'a pas d\'historique', () => {
     render(<MockPlayerWithoutStatsComponent />);
     expect(screen.getByText('Rookie Player')).toBeInTheDocument();
@@ -316,7 +288,6 @@ describe('PlayerDetails Component', () => {
     expect(screen.getByTestId('no-stats-message')).toHaveTextContent('Aucun historique de statistiques disponible pour ce joueur');
   });
 
-  // Test 6: Cas où le joueur n'existe pas
   test('affiche un message approprié si le joueur n\'est pas trouvé', () => {
     render(<MockEmptyTeamComponent />);
     expect(screen.getByText('Joueur non trouvé')).toBeInTheDocument();

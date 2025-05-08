@@ -6,7 +6,6 @@ interface PerformanceEvolutionProps {
 }
 
 const PerformanceEvolution: React.FC<PerformanceEvolutionProps> = ({ history }) => {
-  // Tri des statistiques par année (décroissant)
   const sortedHistory = [...history].sort((a, b) => a.year > b.year ? -1 : 1);
   
   return (
