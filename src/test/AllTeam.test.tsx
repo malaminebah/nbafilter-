@@ -103,4 +103,33 @@ describe('AllTeams (TeamList) Component', () => {
     expect(screen.getByText('Atlanta Hawks')).toBeInTheDocument();
     expect(screen.getByText('Boston Celtics')).toBeInTheDocument();
   });
+  
+  test('vérifie la fonctionnalité du useState avec le bouton "Effacer la recherche"', async () => {
+    renderWithRouter(<AllTeams />);
+    
+    await waitFor(() => {
+      expect(screen.getByText('Atlanta Hawks')).toBeInTheDocument();
+    });
+
+    const searchInput = screen.getByPlaceholderText('Rechercher une équipe...');
+    
+    fireEvent.change(searchInput, { target: { value: 'XYZ' } });
+    
+    await waitFor(() => {
+      expect(screen.queryByText('Atlanta Hawks')).not.toBeInTheDocument();
+      expect(screen.queryByText('Boston Celtics')).not.toBeInTheDocument();
+      expect(screen.getByTestId('no-results-message')).toBeInTheDocument();
+    });
+    
+    const clearButton = screen.getByText('Effacer la recherche');
+    fireEvent.click(clearButton);
+    
+    await waitFor(() => {
+      expect(screen.getByText('Atlanta Hawks')).toBeInTheDocument();
+      expect(screen.getByText('Boston Celtics')).toBeInTheDocument();
+      expect(screen.queryByTestId('no-results-message')).not.toBeInTheDocument();
+    });
+    
+    expect(searchInput).toHaveValue('');
+  });
 });
