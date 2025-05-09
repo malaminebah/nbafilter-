@@ -1,11 +1,15 @@
 import React from "react";
 import NotFound from "./NotFound";
 
-const TeamNotFound: React.FC = () => {
+interface TeamNotFoundProps {
+  errorMessage?: string;
+}
+
+const TeamNotFound: React.FC<TeamNotFoundProps> = ({ errorMessage }) => {
   return (
     <NotFound
-      title="Équipe non trouvée"
-      message="L'équipe que vous recherchez n'existe pas."
+      title={errorMessage ? "Erreur" : "Équipe non trouvée"}
+      message={errorMessage || "L'équipe que vous recherchez n'existe pas."}
     />
   );
 };

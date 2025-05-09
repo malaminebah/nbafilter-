@@ -21,7 +21,7 @@ const TeamRoster: React.FC<TeamRosterProps> = ({ players }) => {
           darkMode ? "text-white" : "text-gray-800"
         } mb-6 border-b pb-2`}
       >
-        Effectif de l'équipe
+        Roster
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -87,7 +87,7 @@ const TeamRoster: React.FC<TeamRosterProps> = ({ players }) => {
                       darkMode ? "text-red-300" : "text-red-500"
                     } uppercase`}
                   >
-                    Rebonds
+                    Rebounds
                   </p>
                   <p
                     className={`text-xl font-bold ${
@@ -107,7 +107,7 @@ const TeamRoster: React.FC<TeamRosterProps> = ({ players }) => {
                       darkMode ? "text-green-300" : "text-green-500"
                     } uppercase`}
                   >
-                    Passes
+                    Assists
                   </p>
                   <p
                     className={`text-xl font-bold ${
@@ -127,7 +127,7 @@ const TeamRoster: React.FC<TeamRosterProps> = ({ players }) => {
                       darkMode ? "text-purple-300" : "text-purple-500"
                     } uppercase`}
                   >
-                    Interceptions
+                    Steals
                   </p>
                   <p
                     className={`text-xl font-bold ${
@@ -144,7 +144,7 @@ const TeamRoster: React.FC<TeamRosterProps> = ({ players }) => {
                   to={`/player/${encodeURIComponent(player.name)}`}
                   className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm"
                 >
-                  Voir les détails
+                  See details
                 </Link>
               </div>
             </div>

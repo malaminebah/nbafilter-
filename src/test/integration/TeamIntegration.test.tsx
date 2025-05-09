@@ -7,7 +7,7 @@ const mockTeams = [
   { id: 2, full_name: 'Boston Celtics', abbreviation: 'BOS', players: [] }
 ];
 
-const TeamList = ({ onTeamClick }) => (
+const TeamList = ({ onTeamClick }: { onTeamClick: (id: number) => void }) => (
   <div data-testid="team-list">
     {mockTeams.map(team => (
       <div 
@@ -21,17 +21,17 @@ const TeamList = ({ onTeamClick }) => (
   </div>
 );
 
-const TeamDetail = ({ teamId }) => (
+const TeamDetail = ({ teamId }: { teamId: number }) => (
   <div data-testid="team-detail">
-    <h1>Détails de l'équipe {teamId}</h1>
+    <h1>Team Details {teamId}</h1>
     <p data-testid="team-id-display">ID: {teamId}</p>
   </div>
 );
 
 const App = () => {
-  const [selectedTeamId, setSelectedTeamId] = React.useState(null);
+  const [selectedTeamId, setSelectedTeamId] = React.useState<number | null>(null);
   
-  const handleTeamClick = (id) => {
+  const handleTeamClick = (id: number) => {
     setSelectedTeamId(id);
   };
   
@@ -46,8 +46,8 @@ const App = () => {
   );
 };
 
-describe("Test d'intégration TeamList et TeamDetail", () => {
-  test("Affiche le détail d'équipe avec l'ID correct après clic sur une équipe", () => {
+describe("TeamList and TeamDetail Integration Test", () => {
+  test("Displays team details with correct ID after clicking on a team", () => {
     render(<App />);
     
     expect(screen.getByTestId('team-list')).toBeInTheDocument();
@@ -63,7 +63,7 @@ describe("Test d'intégration TeamList et TeamDetail", () => {
     expect(screen.getByTestId('team-id-display')).toHaveTextContent('ID: 1');
   });
   
-  test("Affiche le détail avec l'ID correct pour différentes équipes", () => {
+  test("Displays details with correct ID for different teams", () => {
     render(<App />);
     
     fireEvent.click(screen.getByTestId('team-2'));

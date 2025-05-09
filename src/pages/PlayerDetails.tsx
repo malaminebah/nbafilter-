@@ -1,23 +1,57 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { allTeams } from '../../data/NbaTeams';
 import PerformanceEvolution from '../components/PerformanceEvolution';
 import SeasonStatsTable from '../components/SeasonStatsTable';
 import PlayerSummary from '../components/PlayerSummary';
 import PlayerNotFound from '../components/PlayerNotFound';
 import { useTheme } from '../context/ThemeContext';
+import { getPlayerByName } from '../service/serviceApi';
+import { Player } from '../types/types';
+import LoadingSpinner from '../components/ui/LoadingSpinner';
 
 const PlayerDetails: React.FC = () => {
   const { playerName } = useParams<{ playerName: string }>();
   const { darkMode } = useTheme();
+  const [player, setPlayer] = useState<Player | null>(null);
+  const [teamName, setTeamName] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   
   const decodedPlayerName = decodeURIComponent(playerName || '');
   
-  const teamWithPlayer = allTeams.find(team => 
-    team.players.some(player => player.name === decodedPlayerName)
-  );
-  
-  const player = teamWithPlayer?.players.find(p => p.name === decodedPlayerName);
+  useEffect(() => {
+    const fetchPlayerData = async () => {
+      try {
+        setLoading(true);
+        if (!decodedPlayerName) {
+          throw new Error("Player name is required");
+        }
+        
+        const result = await getPlayerByName(decodedPlayerName);
+        
+        if (result) {
+          setPlayer(result.player);
+          setTeamName(result.team.full_name);
+        } else {
+          setPlayer(null);
+        }
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "An error occurred");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPlayerData();
+  }, [decodedPlayerName]);
+
+  if (loading) {
+    return <LoadingSpinner />;
+  }
+
+  if (error) {
+    return <PlayerNotFound errorMessage={error} />;
+  }
 
   if (!player) {
     return <PlayerNotFound />;
@@ -30,7 +64,7 @@ const PlayerDetails: React.FC = () => {
         : 'bg-gradient-to-b from-gray-100 to-gray-200'
     } py-12 px-4 sm:px-6 lg:px-8`}>
       <div className="max-w-4xl mx-auto">
-        <PlayerSummary player={player} teamName={teamWithPlayer?.full_name || ''} />
+        <PlayerSummary player={player} teamName={teamName} />
         
         {player.history && player.history.length > 0 && (
           <>

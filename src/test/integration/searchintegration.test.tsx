@@ -27,7 +27,7 @@ jest.mock("../../../data/NbaTeams.ts", () => ({
   ],
 }));
 
-describe("Intégration de la recherche", () => {
+describe("Search Integration", () => {
   const renderWithRouter = () => {
     return render(
       <ThemeProvider>
@@ -38,13 +38,13 @@ describe("Intégration de la recherche", () => {
     );
   };
 
-  test("filtre les équipes en fonction de la recherche", async () => {
+  test("filters teams based on search input", async () => {
     renderWithRouter();
 
     expect(screen.getByText("Atlanta Hawks")).toBeInTheDocument();
     expect(screen.getByText("Boston Celtics")).toBeInTheDocument();
 
-    const searchInput = screen.getByPlaceholderText("Rechercher une équipe...");
+    const searchInput = screen.getByPlaceholderText("Search for a team...");
     fireEvent.change(searchInput, { target: { value: "Hawks" } });
 
     await waitFor(() => {
@@ -53,25 +53,25 @@ describe("Intégration de la recherche", () => {
     });
   });
 
-  test("affiche un message quand aucune équipe ne correspond à la recherche", async () => {
+  test("displays a message when no teams match the search", async () => {
     renderWithRouter();
 
-    const searchInput = screen.getByPlaceholderText("Rechercher une équipe...");
+    const searchInput = screen.getByPlaceholderText("Search for a team...");
     fireEvent.change(searchInput, { target: { value: "XYZ" } });
 
     await waitFor(
       () => {
         const message = screen.getByTestId("no-results-message");
-        expect(message).toHaveTextContent('Aucune équipe trouvée pour "XYZ"');
+        expect(message).toHaveTextContent('No teams found for "XYZ"');
       },
       { timeout: 3000 }
     );
   });
 
-  test("la recherche est insensible à la casse", async () => {
+  test("search is case insensitive", async () => {
     renderWithRouter();
 
-    const searchInput = screen.getByPlaceholderText("Rechercher une équipe...");
+    const searchInput = screen.getByPlaceholderText("Search for a team...");
     fireEvent.change(searchInput, { target: { value: "hawks" } });
 
     await waitFor(() => {

@@ -1,6 +1,5 @@
-import { Team } from "../src/types/types";
-
-export const allTeams : Team[] = [
+{
+"team": [
     {
       "id": 1,
       "abbreviation": "ATL",
@@ -2281,3 +2280,4 @@ export const allTeams : Team[] = [
       ]
     }
   ]
+}

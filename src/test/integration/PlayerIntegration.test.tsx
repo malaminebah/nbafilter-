@@ -44,13 +44,13 @@ const TeamDetail = ({
 
 const PlayerStats = ({ playerName }: { playerName: string }) => (
   <div data-testid="player-stats">
-    <h1>Statistiques du joueur</h1>
-    <p data-testid="player-name-display">Joueur: {playerName}</p>
+    <h1>Player Statistics</h1>
+    <p data-testid="player-name-display">Player: {playerName}</p>
   </div>
 );
 
 const App = () => {
-  const [selectedPlayer, setSelectedPlayer] = React.useState(null);
+  const [selectedPlayer, setSelectedPlayer] = React.useState<string | null>(null);
   const [isLoading, setIsLoading] = React.useState(false);
 
   const handlePlayerClick = (playerName: string) => {
@@ -63,18 +63,18 @@ const App = () => {
 
   return (
     <div>
-      {isLoading && <div data-testid="loading">Chargement...</div>}
+      {isLoading && <div data-testid="loading">Loading...</div>}
 
       {!selectedPlayer && !isLoading ? (
         <TeamDetail onPlayerClick={handlePlayerClick} />
-      ) : !isLoading ? (
+      ) : !isLoading && selectedPlayer ? (
         <PlayerStats playerName={selectedPlayer} />
       ) : null}
     </div>
   );
 };
 
-describe("Test d'intégration TeamDetail et PlayerStats", () => {
+describe("TeamDetail and PlayerStats Integration Test", () => {
   beforeEach(() => {
     jest.useFakeTimers();
   });
@@ -83,7 +83,7 @@ describe("Test d'intégration TeamDetail et PlayerStats", () => {
     jest.useRealTimers();
   });
 
-  test("Navigue vers les statistiques du joueur après clic", async () => {
+  test("Navigates to player statistics after click", async () => {
     render(<App />);
 
     expect(screen.getByTestId("team-detail")).toBeInTheDocument();
@@ -101,11 +101,11 @@ describe("Test d'intégration TeamDetail et PlayerStats", () => {
     expect(screen.getByTestId("player-stats")).toBeInTheDocument();
 
     expect(screen.getByTestId("player-name-display")).toHaveTextContent(
-      "Joueur: Trae Young"
+      "Player: Trae Young"
     );
   });
 
-  test("Charge les données pour le bon joueur", async () => {
+  test("Loads data for the correct player", async () => {
     render(<App />);
 
     fireEvent.click(screen.getByTestId("player-2"));
@@ -115,7 +115,7 @@ describe("Test d'intégration TeamDetail et PlayerStats", () => {
     });
 
     expect(screen.getByTestId("player-name-display")).toHaveTextContent(
-      "Joueur: Jayson Tatum"
+      "Player: Jayson Tatum"
     );
   });
 });

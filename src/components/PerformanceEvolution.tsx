@@ -23,7 +23,7 @@ const PerformanceEvolution: React.FC<PerformanceEvolutionProps> = ({
           darkMode ? "text-white" : "text-gray-800"
         } mb-6 border-b pb-2`}
       >
-        Évolution des performances
+        Performance Evolution
       </h2>
 
       {sortedHistory.length > 0 ? (
@@ -46,7 +46,7 @@ const PerformanceEvolution: React.FC<PerformanceEvolutionProps> = ({
                   darkMode ? "text-gray-300" : "text-gray-700"
                 }`}
               >
-                Rebonds
+                Rebounds
               </span>
             </div>
             <div className="flex items-center">
@@ -56,7 +56,7 @@ const PerformanceEvolution: React.FC<PerformanceEvolutionProps> = ({
                   darkMode ? "text-gray-300" : "text-gray-700"
                 }`}
               >
-                Passes
+                Assists
               </span>
             </div>
             <div className="flex items-center">
@@ -66,7 +66,7 @@ const PerformanceEvolution: React.FC<PerformanceEvolutionProps> = ({
                   darkMode ? "text-gray-300" : "text-gray-700"
                 }`}
               >
-                Interceptions
+                Steals
               </span>
             </div>
           </div>
@@ -87,7 +87,7 @@ const PerformanceEvolution: React.FC<PerformanceEvolutionProps> = ({
                   <div
                     className="w-8 bg-red-500 rounded-t-md"
                     style={{ height: `${season.rebounds * 4}px` }}
-                    title={`Rebonds: ${season.rebounds}`}
+                    title={`Rebounds: ${season.rebounds}`}
                   ></div>
                   <div
                     className="w-8 bg-green-500 rounded-t-md"
@@ -118,7 +118,7 @@ const PerformanceEvolution: React.FC<PerformanceEvolutionProps> = ({
           } rounded-xl p-8 text-center`}
         >
           <p className={`${darkMode ? "text-gray-300" : "text-gray-500"}`}>
-            Données insuffisantes pour afficher l'évolution
+            No data available
           </p>
         </div>
       )}

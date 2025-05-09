@@ -41,12 +41,12 @@ const TeamHeader: React.FC<TeamHeaderProps> = ({ team }) => {
             <span
               className={`${badgeClass} px-3 py-1 rounded-full text-sm font-medium`}
             >
-              Conference: {team.conference}
+              {team.conference}
             </span>
             <span
               className={`${badgeClass} px-3 py-1 rounded-full text-sm font-medium`}
             >
-              Division: {team.division}
+            {team.division}
             </span>
           </div>
         </div>

@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
             to="/"
             className="text-gray-700 dark:text-gray-200 hover:text-orange-500 transition-colors font-medium"
           >
-            Équipes
+            Teams
           </Link>
 
           <button

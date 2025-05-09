@@ -54,7 +54,7 @@ const PlayerSummary: React.FC<PlayerSummaryProps> = ({ player, teamName }) => {
               darkMode ? "text-red-300" : "text-red-500"
             } uppercase`}
           >
-            Rebonds
+            Rebounds
           </p>
           <p
             className={`text-3xl font-bold ${
@@ -74,7 +74,7 @@ const PlayerSummary: React.FC<PlayerSummaryProps> = ({ player, teamName }) => {
               darkMode ? "text-green-300" : "text-green-500"
             } uppercase`}
           >
-            Passes
+            Assists
           </p>
           <p
             className={`text-3xl font-bold ${
@@ -94,7 +94,7 @@ const PlayerSummary: React.FC<PlayerSummaryProps> = ({ player, teamName }) => {
               darkMode ? "text-purple-300" : "text-purple-500"
             } uppercase`}
           >
-            Interceptions
+            Steals
           </p>
           <p
             className={`text-3xl font-bold ${

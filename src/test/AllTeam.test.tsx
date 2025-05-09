@@ -55,31 +55,31 @@ const renderWithRouter = (ui: React.ReactElement) => {
 };
 
 const MockLoadingComponent = () => (
-  <div className="flex justify-center items-center h-64">Chargement...</div>
+  <div className="flex justify-center items-center h-64">Loading...</div>
 );
 
 const MockErrorComponent = () => (
   <div data-testid="error-message" className="text-red-500 text-center p-4">
-    Erreur: Une erreur est survenue
+    Error: An error occurred
   </div>
 );
 
 describe('AllTeams (TeamList) Component', () => {
-  test('affiche correctement l\'état de chargement', () => {
+  test('correctly displays loading state', () => {
     render(<MockLoadingComponent />);
     
-    expect(screen.getByText(/chargement/i)).toBeInTheDocument();
+    expect(screen.getByText(/loading/i)).toBeInTheDocument();
   });
 
-  test('affiche un message d\'erreur si l\'appel API échoue', () => {
+  test('displays error message if API call fails', () => {
     render(<MockErrorComponent />);
     
     const errorElement = screen.getByTestId('error-message');
     expect(errorElement).toBeInTheDocument();
-    expect(errorElement.textContent).toContain('Erreur:');
+    expect(errorElement.textContent).toContain('Error:');
   });
 
-  test('affiche correctement la liste d\'équipes lorsque l\'appel réussit', async () => {
+  test('correctly displays team list when API call succeeds', async () => {
     renderWithRouter(<AllTeams />);
     
     await waitFor(() => {
@@ -89,14 +89,14 @@ describe('AllTeams (TeamList) Component', () => {
     expect(screen.getByText('Boston Celtics')).toBeInTheDocument();
   });
 
-  test('filtre correctement les équipes selon le terme de recherche', async () => {
+  test('correctly filters teams based on search term', async () => {
     renderWithRouter(<AllTeams />);
     
     await waitFor(() => {
       expect(screen.getByText('Atlanta Hawks')).toBeInTheDocument();
     });
 
-    const searchInput = screen.getByPlaceholderText('Rechercher une équipe...');
+    const searchInput = screen.getByPlaceholderText('Search for a team...');
     
     fireEvent.change(searchInput, { target: { value: 'Atlanta' } });
     
@@ -108,14 +108,14 @@ describe('AllTeams (TeamList) Component', () => {
     expect(screen.getByText('Boston Celtics')).toBeInTheDocument();
   });
   
-  test('vérifie la fonctionnalité du useState avec le bouton "Effacer la recherche"', async () => {
+  test('verifies useState functionality with "Clear search" button', async () => {
     renderWithRouter(<AllTeams />);
     
     await waitFor(() => {
       expect(screen.getByText('Atlanta Hawks')).toBeInTheDocument();
     });
 
-    const searchInput = screen.getByPlaceholderText('Rechercher une équipe...');
+    const searchInput = screen.getByPlaceholderText('Search for a team...');
     
     fireEvent.change(searchInput, { target: { value: 'XYZ' } });
     
@@ -125,7 +125,7 @@ describe('AllTeams (TeamList) Component', () => {
       expect(screen.getByTestId('no-results-message')).toBeInTheDocument();
     });
     
-    const clearButton = screen.getByText('Effacer la recherche');
+    const clearButton = screen.getByText('Clear search');
     fireEvent.click(clearButton);
     
     await waitFor(() => {

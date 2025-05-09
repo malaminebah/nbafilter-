@@ -23,7 +23,7 @@ const SeasonStatsTable: React.FC<SeasonStatsTableProps> = ({ statistics }) => {
           darkMode ? "text-white" : "text-gray-800"
         } mb-6 border-b pb-2`}
       >
-        Statistiques par saison
+       Season Stats
       </h2>
 
       {sortedStats.length > 0 ? (
@@ -47,7 +47,7 @@ const SeasonStatsTable: React.FC<SeasonStatsTableProps> = ({ statistics }) => {
                     darkMode ? "text-gray-300" : "text-gray-700"
                   } uppercase tracking-wider`}
                 >
-                  Saison
+                  Season
                 </th>
                 <th
                   scope="col"
@@ -68,7 +68,7 @@ const SeasonStatsTable: React.FC<SeasonStatsTableProps> = ({ statistics }) => {
                 >
                   <span className="flex items-center">
                     <span className="w-3 h-3 rounded-full bg-red-300 mr-2"></span>
-                    Rebonds
+                    Rebounds
                   </span>
                 </th>
                 <th
@@ -79,7 +79,7 @@ const SeasonStatsTable: React.FC<SeasonStatsTableProps> = ({ statistics }) => {
                 >
                   <span className="flex items-center">
                     <span className="w-3 h-3 rounded-full bg-green-300 mr-2"></span>
-                    Passes
+                    Assists
                   </span>
                 </th>
                 <th
@@ -90,7 +90,7 @@ const SeasonStatsTable: React.FC<SeasonStatsTableProps> = ({ statistics }) => {
                 >
                   <span className="flex items-center">
                     <span className="w-3 h-3 rounded-full bg-purple-300 mr-2"></span>
-                    Interceptions
+                    Steals
                   </span>
                 </th>
               </tr>
@@ -203,7 +203,7 @@ const SeasonStatsTable: React.FC<SeasonStatsTableProps> = ({ statistics }) => {
               darkMode ? "text-gray-300" : "text-gray-500"
             } font-medium`}
           >
-            Aucun historique de statistiques disponible pour ce joueur
+            No history of stats available for this player
           </p>
         </div>
       )}

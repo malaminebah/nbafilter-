@@ -1,11 +1,15 @@
 import React from "react";
 import NotFound from "./NotFound";
 
-const PlayerNotFound: React.FC = () => {
+interface PlayerNotFoundProps {
+  errorMessage?: string;
+}
+
+const PlayerNotFound: React.FC<PlayerNotFoundProps> = ({ errorMessage }) => {
   return (
     <NotFound
-      title="Joueur non trouvé"
-      message="Le joueur que vous recherchez n'existe pas dans notre base de données."
+      title={errorMessage ? "Error" : "Player not found"}
+      message={errorMessage || "The player you are looking for does not exist."}
     />
   );
 };

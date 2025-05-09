@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import Card from "../components/ui/Card";
-import { allTeams } from "../../data/NbaTeams";
 import SearchBar from "../components/SearchBar";
 import { Team } from "../types/types";
 import NoResults from "../components/NoResults";
 import { useTheme } from "../context/ThemeContext";
+import { getAllTeams } from "../service/serviceApi";
+import LoadingSpinner from "../components/ui/LoadingSpinner";
+import ErrorMessage from "../components/ui/ErrorMessage";
 
 const AllTeams: React.FC = () => {
-  const [teams, setTeams] = useState<Team[]>(allTeams);
+  const [teams, setTeams] = useState<Team[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -16,13 +18,12 @@ const AllTeams: React.FC = () => {
   useEffect(() => {
     const fetchTeams = async () => {
       try {
-        if (!teams) {
-          throw new Error("Erreur lors de la récupération des équipes");
-        }
-        setTeams(teams);
+        setLoading(true);
+        const data = await getAllTeams();
+        setTeams(data);
       } catch (err) {
         setError(
-          err instanceof Error ? err.message : "Une erreur est survenue"
+          err instanceof Error ? err.message : "An error occurred"
         );
       } finally {
         setLoading(false);
@@ -40,83 +41,29 @@ const AllTeams: React.FC = () => {
   );
 
   if (loading)
-    return (
-      <div className="flex justify-center items-center h-64">
-        <div className="animate-pulse flex flex-col items-center">
-          <div
-            className={`w-12 h-12 rounded-full ${
-              darkMode ? "bg-gray-700" : "bg-gray-200"
-            } mb-3`}
-          ></div>
-          <div
-            className={`${
-              darkMode ? "text-gray-300" : "text-gray-500"
-            } text-lg font-medium`}
-          >
-            Chargement...
-          </div>
-        </div>
-      </div>
-    );
+    return <LoadingSpinner />;
 
   if (error)
-    return (
-      <div className="flex justify-center items-center h-64">
-        <div
-          className={`${
-            darkMode ? "bg-red-900 border-red-700" : "bg-red-50 border-red-200"
-          } border rounded-2xl p-6 max-w-md`}
-        >
-          <div className="flex items-center mb-3">
-            <svg
-              className="w-8 h-8 text-red-500 mr-3"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-            <h3
-              className={`text-lg font-medium ${
-                darkMode ? "text-red-300" : "text-red-800"
-              }`}
-            >
-              Erreur
-            </h3>
-          </div>
-          <p
-            data-testid="error-message"
-            className={darkMode ? "text-red-300" : "text-red-700"}
-          >
-            {error}
-          </p>
-        </div>
-      </div>
-    );
+    return <ErrorMessage message={error} />;
 
   return (
     <div className="flex flex-col gap-8">
       <SearchBar
         value={searchTerm}
         onChange={setSearchTerm}
-        placeholder="Rechercher une équipe..."
+        placeholder="Search for a team..."
       />
 
       <div className="container mx-auto px-4">
         {filteredTeams.length > 0 ? (
           <div className="grid grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4">
-            {filteredTeams.map((team) => (
+          {filteredTeams.map((team) => (
               <Card key={team.id} {...team} />
             ))}
           </div>
         ) : (
           <NoResults
-            message="Aucune équipe trouvée pour"
+            message="No teams found for"
             searchTerm={searchTerm}
             onClearSearch={() => setSearchTerm("")}
             showClearButton={true}

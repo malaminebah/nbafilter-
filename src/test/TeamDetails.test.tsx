@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 const ErrorComponent = () => (
-  <h1 data-testid="error-message">Équipe non trouvée</h1>
+  <h1 data-testid="error-message">Team not found</h1>
 );
 
 const TeamWithPlayersComponent = () => (
@@ -22,18 +22,18 @@ const TeamWithoutPlayersComponent = () => (
 );
 
 describe('TeamDetails Component', () => {
-  test('affiche erreur si équipe non trouvée', () => {
+  test('displays error if team not found', () => {
     render(<ErrorComponent />);
     expect(screen.getByTestId('error-message')).toBeInTheDocument();
   });
 
-  test('affiche équipe avec joueurs', () => {
+  test('displays team with players', () => {
     render(<TeamWithPlayersComponent />);
     expect(screen.getByTestId('team-name')).toHaveTextContent('Atlanta Hawks');
     expect(screen.getByTestId('player-list').children.length).toBeGreaterThan(0);
   });
 
-  test('affiche équipe sans joueurs', () => {
+  test('displays team without players', () => {
     render(<TeamWithoutPlayersComponent />);
     expect(screen.getByTestId('team-name')).toHaveTextContent('Boston Celtics');
     expect(screen.getByTestId('player-list').children.length).toBe(0);
