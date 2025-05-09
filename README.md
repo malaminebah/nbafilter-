@@ -23,6 +23,7 @@ NBA Filter provides a user-friendly interface for basketball fans to explore NBA
 - **Tailwind CSS**: Utility-first CSS framework for styling
 - **Vite**: Frontend build tool for fast development
 - **React Router**: For client-side routing
+- **JSON Server**: For simulating a REST API with mock data
 - **Jest & React Testing Library**: For unit and integration testing
 
 ## Dependencies
@@ -39,6 +40,9 @@ Here's a breakdown of the key dependencies used in this project:
 - `postcss`: Tool for transforming CSS with JavaScript plugins
 - `autoprefixer`: PostCSS plugin to parse CSS and add vendor prefixes
 
+### API Simulation
+- `json-server`: Creates a full fake REST API with zero coding
+
 ### Development & Build Tools
 - `vite`: Modern frontend build tool that significantly improves the development experience
 - `typescript`: JavaScript superset for adding static types
@@ -53,25 +57,26 @@ Here's a breakdown of the key dependencies used in this project:
 
 ## Data Source
 
-This project uses static JSON data instead of a real-time NBA API for several reasons:
+This project uses JSON Server to simulate a REST API for NBA data. This approach offers several advantages:
 
-1. **API Limitations**: Most sports APIs have strict rate limits and/or require paid subscriptions for extensive usage
-2. **Development Efficiency**: Using static data allows for faster development and testing without worrying about API downtime or rate limits
-3. **Demonstration Purposes**: The primary goal of this project is to demonstrate frontend development skills rather than real-time data integration
-4. **Consistent Testing Environment**: Static data provides a consistent dataset for testing
-
-The data structure closely mimics what would be returned by a real NBA API, making it straightforward to replace with a live API integration in a production environment.
+1. **API Simulation**: JSON Server creates a full fake REST API with zero coding, allowing for realistic API interactions
+2. **Development Efficiency**: Allows for faster development and testing without external API dependencies
+3. **Demonstration Purposes**: Showcases frontend development with proper API communication patterns
+4. **Easy Migration**: The code is structured to easily migrate to a real NBA API in the future
 
 ## Project Structure
 
 ```
 nba-filter/
 ├── data/                  # Static data files
-│   └── NbaTeams.ts        # Teams and players data
+│   └── NbaTeams.json      # Teams and players data for JSON Server
 ├── public/                # Public assets
 ├── src/
 │   ├── components/        # Reusable components
+│   │   └── ui/            # UI components (Card, LoadingSpinner, ErrorMessage)
 │   ├── pages/             # Page components
+│   ├── service/           # API service layer
+│   │   └── serviceApi.ts  # Functions for API communication
 │   ├── types/             # TypeScript type definitions
 │   ├── test/              # Test files
 │   └── ...
@@ -87,6 +92,7 @@ The application follows a modular component architecture:
 - **UI Components**: Reusable interface elements (TeamHeader, TeamRoster, PlayerSummary)
 - **Data Display Components**: Components for visualizing data (SeasonStatsTable, PerformanceEvolution)
 - **Utility Components**: Reusable utility components (SearchBar, NoResults, NotFound)
+- **Service Layer**: API communication layer that abstracts the details of fetching data
 
 This separation of concerns ensures maintainability and allows for easy testing of individual components.
 
@@ -112,14 +118,38 @@ npm install
 yarn
 ```
 
-3. Start the development server
+### Running the Application
+
+To run the application properly, you need to start both the JSON Server API and the React development server.
+
+#### Step 1: Start JSON Server (in one terminal)
+
+```bash
+npm run api
+# or
+yarn api
+```
+
+This will start JSON Server on port 3001 and serve the NBA data from `data/NbaTeams.json`.
+You can access the API at `http://localhost:3001/team`.
+
+#### Step 2: Start the React Development Server (in another terminal)
+
 ```bash
 npm run dev
 # or
 yarn dev
 ```
 
-4. Open your browser and navigate to `http://localhost:5173`
+3. Open your browser and navigate to `http://localhost:5173`
+
+### API Endpoints
+
+JSON Server provides the following endpoints:
+
+- `GET /team`: Get all teams
+- `GET /team/:id`: Get a specific team by ID
+- `GET /team?q=:searchTerm`: Search teams by name or other properties
 
 ## Testing
 
@@ -135,7 +165,8 @@ npm run test:watch
 # Run tests with coverage report
 npm run test:coverage
 ```
-future Enhancements
+
+## Future Enhancements
 
 - Integration with a live NBA API for real-time data
 - Advanced filtering options by various player statistics

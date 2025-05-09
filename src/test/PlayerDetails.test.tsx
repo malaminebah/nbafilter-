@@ -1,81 +1,88 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { ThemeProvider } from "../context/ThemeContext";
+import * as apiService from "../service/serviceApi";
+import PlayerDetails from "../pages/PlayerDetails";
+import { MemoryRouter, Routes, Route } from "react-router-dom";
 
-jest.mock("../../data/NbaTeams", () => ({
-  allTeams: [
-    {
-      id: 1,
-      abbreviation: "ATL",
-      city: "Atlanta",
-      conference: "East",
-      division: "Southeast",
-      full_name: "Atlanta Hawks",
-      name: "Hawks",
-      players: [
-        {
-          nom: "Trae Young",
-          points: 25.5,
-          rebonds: 3.7,
-          passes: 9.4,
-          interceptions: 1.1,
-          historique: [
-            {
-              annee: "2023-2024",
-              points: 25.5,
-              rebonds: 3.7,
-              passes: 9.4,
-              interceptions: 1.1,
-            },
-            {
-              annee: "2022-2023",
-              points: 26.2,
-              rebonds: 3.0,
-              passes: 10.2,
-              interceptions: 1.0,
-            },
-            {
-              annee: "2021-2022",
-              points: 28.4,
-              rebonds: 3.8,
-              passes: 9.7,
-              interceptions: 0.9,
-            },
-          ],
-        },
-      ],
-    },
-    {
-      id: 2,
-      abbreviation: "BOS",
-      city: "Boston",
-      conference: "East",
-      division: "Atlantic",
-      full_name: "Boston Celtics",
-      name: "Celtics",
-      players: [],
-    },
-    {
-      id: 3,
-      abbreviation: "PHX",
-      city: "Phoenix",
-      conference: "West",
-      division: "Pacific",
-      full_name: "Phoenix Suns",
-      name: "Suns",
-      players: [
-        {
-          nom: "Rookie Player",
-          points: 0,
-          rebonds: 0,
-          passes: 0,
-          interceptions: 0,
-          historique: [], 
-        },
-      ],
-    },
-  ],
+// Mock the API service
+jest.mock("../service/serviceApi", () => ({
+  getPlayerByName: jest.fn(),
+  getAllTeams: jest.fn()
 }));
+
+// Mock window location
+Object.defineProperty(window, 'location', {
+  writable: true,
+  value: { 
+    pathname: '/player/Trae%20Young',
+    href: 'http://localhost:3000/player/Trae%20Young',
+    origin: 'http://localhost:3000'
+  }
+});
+
+// Mock data for tests
+const mockPlayerData = {
+  player: {
+    name: "Trae Young",
+    points: 25.5,
+    rebounds: 3.7,
+    assists: 9.4,
+    steals: 1.1,
+    history: [
+      {
+        year: "2023-2024",
+        points: 25.5,
+        rebounds: 3.7,
+        assists: 9.4,
+        steals: 1.1,
+      },
+      {
+        year: "2022-2023",
+        points: 26.2,
+        rebounds: 3.0,
+        assists: 10.2,
+        steals: 1.0,
+      },
+      {
+        year: "2021-2022",
+        points: 28.4,
+        rebounds: 3.8,
+        assists: 9.7,
+        steals: 0.9,
+      },
+    ],
+  },
+  team: {
+    id: 1,
+    abbreviation: "ATL",
+    city: "Atlanta",
+    conference: "East",
+    division: "Southeast",
+    full_name: "Atlanta Hawks",
+    name: "Hawks",
+  }
+};
+
+const mockRookiePlayerData = {
+  player: {
+    name: "Rookie Player",
+    points: 0,
+    rebounds: 0,
+    assists: 0,
+    steals: 0,
+    history: [],
+  },
+  team: {
+    id: 3,
+    abbreviation: "PHX",
+    city: "Phoenix",
+    conference: "West",
+    division: "Pacific",
+    full_name: "Phoenix Suns",
+    name: "Suns",
+  }
+};
 
 const MockLoadingComponent = () => (
   <div className="flex justify-center items-center h-64">Loading...</div>
@@ -250,29 +257,48 @@ const MockEmptyTeamComponent = () => (
   </div>
 );
 
-const renderWithProvider = (component: React.ReactElement) => {
+const renderWithRouter = (playerName: string) => {
   return render(
     <ThemeProvider>
-      {component}
+      <MemoryRouter initialEntries={[`/player/${encodeURIComponent(playerName)}`]}>
+        <Routes>
+          <Route path="/player/:playerName" element={<PlayerDetails />} />
+        </Routes>
+      </MemoryRouter>
     </ThemeProvider>
   );
 };
 
 describe("PlayerDetails Component", () => {
-  test("displays loading state correctly", () => {
-    render(<MockLoadingComponent />);
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
+  test("displays loading state correctly", async () => {
+    (apiService.getPlayerByName as jest.Mock).mockImplementation(
+      () => new Promise(resolve => setTimeout(() => resolve(mockPlayerData), 100))
+    );
+    
+    renderWithRouter('Trae Young');
     expect(screen.getByText(/Loading/i)).toBeInTheDocument();
   });
 
-  test("displays error message if API call fails", () => {
-    render(<MockErrorComponent />);
-    const errorElement = screen.getByTestId("error-message");
-    expect(errorElement).toBeInTheDocument();
-    expect(errorElement.textContent).toContain("Error:");
+  test("displays error message if API call fails", async () => {
+    (apiService.getPlayerByName as jest.Mock).mockRejectedValue(new Error("Unable to retrieve player data"));
+    
+    renderWithRouter('Trae Young');
+    
+    await waitFor(() => {
+      expect(screen.getByTestId("error-title")).toBeInTheDocument();
+      expect(screen.getByTestId("error-message")).toBeInTheDocument();
+      expect(screen.getByTestId("error-message").textContent).toBe("Unable to retrieve player data");
+    });
   });
 
-  test("displays player data correctly", () => {
-    renderWithProvider(<MockPlayerComponent />);
+  test("displays player data correctly", async () => {
+    (apiService.getPlayerByName as jest.Mock).mockResolvedValue(mockPlayerData);
+    
+    render(<MockPlayerComponent />);
     
     expect(screen.getByText("Trae Young")).toBeInTheDocument();
     expect(screen.getByText("Atlanta Hawks")).toBeInTheDocument();
@@ -292,8 +318,10 @@ describe("PlayerDetails Component", () => {
     expect(statsDefensive).toHaveTextContent("1.1");
   });
 
-  test("displays historical statistics sorted by season (descending)", () => {
-    renderWithProvider(<MockPlayerComponent />);
+  test("displays historical statistics sorted by season (descending)", async () => {
+    (apiService.getPlayerByName as jest.Mock).mockResolvedValue(mockPlayerData);
+    
+    render(<MockPlayerComponent />);
     
     const statsTable = screen.getByTestId("stats-table");
     expect(statsTable).toBeInTheDocument();
@@ -303,8 +331,10 @@ describe("PlayerDetails Component", () => {
     expect(firstRow).toHaveTextContent("25.5");
   });
 
-  test("displays appropriate message if player has no history", () => {
-    renderWithProvider(<MockPlayerWithoutStatsComponent />);
+  test("displays appropriate message if player has no history", async () => {
+    (apiService.getPlayerByName as jest.Mock).mockResolvedValue(mockRookiePlayerData);
+    
+    render(<MockPlayerWithoutStatsComponent />);
     
     expect(screen.getByTestId("no-stats-message")).toBeInTheDocument();
     expect(screen.getByTestId("no-stats-message")).toHaveTextContent(
@@ -312,8 +342,10 @@ describe("PlayerDetails Component", () => {
     );
   });
 
-  test("displays appropriate message if player is not found", () => {
-    renderWithProvider(<MockEmptyTeamComponent />);
+  test("displays appropriate message if player is not found", async () => {
+    (apiService.getPlayerByName as jest.Mock).mockResolvedValue(undefined);
+    
+    render(<MockEmptyTeamComponent />);
     expect(screen.getByText("Player not found")).toBeInTheDocument();
     expect(
       screen.getByText("The player you are looking for does not exist.")

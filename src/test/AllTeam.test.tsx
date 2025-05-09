@@ -4,47 +4,53 @@ import '@testing-library/jest-dom';
 import { BrowserRouter } from 'react-router-dom';
 import AllTeams from '../pages/AllTeam';
 import { ThemeProvider } from '../context/ThemeContext';
+import * as apiService from '../service/serviceApi';
 
-jest.mock('../../data/NbaTeams.ts', () => ({
-  allTeams: [
-    {
-      id: 1,
-      abbreviation: "ATL",
-      city: "Atlanta",
-      conference: "East",
-      division: "Southeast",
-      full_name: "Atlanta Hawks",
-      name: "Hawks",
-      players: [
-        {
-          nom: "Trae Young",
-          points: 25.5,
-          rebonds: 3.7,
-          passes: 9.4,
-          interceptions: 1.1
-        }
-      ]
-    },
-    {
-      id: 2,
-      abbreviation: "BOS",
-      city: "Boston",
-      conference: "East",
-      division: "Atlantic",
-      full_name: "Boston Celtics",
-      name: "Celtics",
-      players: [
-        {
-          nom: "Jayson Tatum",
-          points: 30.1,
-          rebonds: 8.8,
-          passes: 4.6,
-          interceptions: 1.1
-        }
-      ]
-    }
-  ]
+// Mock the API service
+jest.mock('../service/serviceApi', () => ({
+  getAllTeams: jest.fn(),
+  searchTeams: jest.fn()
 }));
+
+// Mock data for tests
+const mockTeams = [
+  {
+    id: 1,
+    abbreviation: "ATL",
+    city: "Atlanta",
+    conference: "East",
+    division: "Southeast",
+    full_name: "Atlanta Hawks",
+    name: "Hawks",
+    players: [
+      {
+        name: "Trae Young",
+        points: 25.5,
+        rebounds: 3.7,
+        assists: 9.4,
+        steals: 1.1
+      }
+    ]
+  },
+  {
+    id: 2,
+    abbreviation: "BOS",
+    city: "Boston",
+    conference: "East",
+    division: "Atlantic",
+    full_name: "Boston Celtics",
+    name: "Celtics",
+    players: [
+      {
+        name: "Jayson Tatum",
+        points: 30.1,
+        rebounds: 8.8,
+        assists: 4.6,
+        steals: 1.1
+      }
+    ]
+  }
+];
 
 const renderWithRouter = (ui: React.ReactElement) => {
   return render(
@@ -54,29 +60,37 @@ const renderWithRouter = (ui: React.ReactElement) => {
   );
 };
 
-const MockLoadingComponent = () => (
-  <div className="flex justify-center items-center h-64">Loading...</div>
-);
 
-const MockErrorComponent = () => (
-  <div data-testid="error-message" className="text-red-500 text-center p-4">
-    Error: An error occurred
-  </div>
-);
 
 describe('AllTeams (TeamList) Component', () => {
-  test('correctly displays loading state', () => {
-    render(<MockLoadingComponent />);
+  beforeEach(() => {
+    jest.clearAllMocks();
+    // Default successful API response
+    (apiService.getAllTeams as jest.Mock).mockResolvedValue(mockTeams);
+  });
+
+  test('correctly displays loading state', async () => {
+    // Set up API call to delay so we can see loading state
+    (apiService.getAllTeams as jest.Mock).mockImplementation(
+      () => new Promise(resolve => setTimeout(() => resolve(mockTeams), 100))
+    );
+    
+    renderWithRouter(<AllTeams />);
     
     expect(screen.getByText(/loading/i)).toBeInTheDocument();
   });
 
-  test('displays error message if API call fails', () => {
-    render(<MockErrorComponent />);
+  test('displays error message if API call fails', async () => {
+    // Set up API call to fail
+    (apiService.getAllTeams as jest.Mock).mockRejectedValue(new Error('API error'));
     
-    const errorElement = screen.getByTestId('error-message');
-    expect(errorElement).toBeInTheDocument();
-    expect(errorElement.textContent).toContain('Error:');
+    renderWithRouter(<AllTeams />);
+    
+    await waitFor(() => {
+      const errorElement = screen.getByTestId('error-message');
+      expect(errorElement).toBeInTheDocument();
+      expect(errorElement.textContent).toContain('API error');
+    });
   });
 
   test('correctly displays team list when API call succeeds', async () => {
