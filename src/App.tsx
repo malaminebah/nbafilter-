@@ -1,4 +1,3 @@
-import React from 'react';
 import AllTeams from './pages/AllTeam';
 import { Routes, Route } from 'react-router-dom';
 import TeamDetails from './pages/TeamDetails';

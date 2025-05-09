@@ -13,7 +13,6 @@ const AllTeams: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const { darkMode } = useTheme();
 
   useEffect(() => {
     const fetchTeams = async () => {

@@ -149,7 +149,7 @@ JSON Server provides the following endpoints:
 
 - `GET /team`: Get all teams
 - `GET /team/:id`: Get a specific team by ID
-- `GET /team?q=:searchTerm`: Search teams by name or other properties
+
 
 ## Testing
 
